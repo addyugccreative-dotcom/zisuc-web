@@ -1,0 +1,35 @@
+/* Custom Assets stylesheet overrides for Wave Shopify Style Theme */
+.revealing-element {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.revealing-element.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slide in from right drawer standard override transitions */
+#CartDrawer.active {
+  transform: translateX(0);
+}
+#MobileMenuDrawer.active {
+  transform: translateX(0);
+}
+
+/* Floating custom styling tags */
+.is-sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  z-index: 999;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+  animation: slide-down 0.3s ease;
+}
+
+@keyframes slide-down {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}

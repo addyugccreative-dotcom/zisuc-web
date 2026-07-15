@@ -1,0 +1,25 @@
+{
+  "current": "Default",
+  "presets": {
+    "Default": {
+      "color_bg": "#faf3ee",
+      "color_bg_secondary": "#ebdcd3",
+      "color_text": "#2c1a11",
+      "color_accent": "#f8cfc3",
+      "color_button": "#b5b3f5",
+      "color_button_text": "#2c1a11",
+      "color_button_hover": "#9fa0ed",
+      "animation_speed": "0.3s"
+    },
+    "Peaches": {
+      "color_bg": "#faf3ee",
+      "color_bg_secondary": "#ebd8cc",
+      "color_text": "#2c1a11",
+      "color_accent": "#ffd8cc",
+      "color_button": "#b5b3f5",
+      "color_button_text": "#2c1a11",
+      "color_button_hover": "#9fa0ed",
+      "animation_speed": "0.3s"
+    }
+  }
+}

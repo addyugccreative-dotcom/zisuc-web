@@ -1,0 +1,58 @@
+<div class="testimonials-section bg-[#ebdcd3] py-16 reveal" id="Testimonials-{{ section.id }}">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <span class="font-mono text-xs uppercase tracking-widest text-[#2c1a11]/60">Verified Experiences</span>
+      <h2 class="font-heading italic font-light text-3xl sm:text-4xl mt-3 tracking-tight">{{ section.settings.title }}</h2>
+    </div>
+
+    <!-- Review items -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="testimonial-card bg-neutral-50/50 p-8 border border-neutral-100 rounded">
+        {% render 'icon-star' %}{% render 'icon-star' %}{% render 'icon-star' %}{% render 'icon-star' %}{% render 'icon-star' %}
+        <p class="mt-6 text-sm sm:text-base leading-relaxed font-subheading text-[#2c1a11]">
+          "My skin feels incredibly soft, hydrated, and looks more radiant than ever. I've received so many compliments since I started using it!"
+        </p>
+        <div class="mt-8">
+          <p class="font-bold text-xs uppercase tracking-wider text-[#2c1a11]">Michael N.</p>
+          <p class="text-[10px] text-gray-500 font-mono mt-1">Verified Customer</p>
+        </div>
+      </div>
+
+      <div class="testimonial-card bg-neutral-50/50 p-8 border border-neutral-100 rounded">
+        {% render 'icon-star' %}{% render 'icon-star' %}{% render 'icon-star' %}{% render 'icon-star' %}{% render 'icon-star' %}
+        <p class="mt-6 text-sm sm:text-base leading-relaxed font-subheading text-[#2c1a11]">
+          "The best moisturizer on the market! Lightweight, absorbs fast, and perfectly fits my dry base skin type. I highly recommend Wave."
+        </p>
+        <div class="mt-8">
+          <p class="font-bold text-xs uppercase tracking-wider text-[#2c1a11]">Sophia R.</p>
+          <p class="text-[10px] text-gray-500 font-mono mt-1">Verified Customer</p>
+        </div>
+      </div>
+
+      <div class="testimonial-card bg-neutral-50/50 p-8 border border-neutral-100 rounded">
+        {% render 'icon-star' %}{% render 'icon-star' %}{% render 'icon-star' %}{% render 'icon-star' %}{% render 'icon-star' %}
+        <p class="mt-6 text-sm sm:text-base leading-relaxed font-subheading text-[#2c1a11]">
+          "Simple, clean, and incredible results. The peach details are beautiful. My acne marks faded significantly in under three weeks."
+        </p>
+        <div class="mt-8">
+          <p class="font-bold text-xs uppercase tracking-wider text-[#2c1a11]">Elena G.</p>
+          <p class="text-[10px] text-gray-500 font-mono mt-1">Verified Customer</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Testimonials",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Review Panel Headline",
+      "default": "Don't just trust our words. See what people are saying"
+    }
+  ]
+}
+{% endschema %}

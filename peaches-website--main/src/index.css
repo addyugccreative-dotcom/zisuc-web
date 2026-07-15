@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;750&family=Outfit:wght@350;400;500;600;700&family=Playfair+Display:ital,wght@0,450;0,600;1,400;1,600&family=JetBrains+Mono&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-subheading: 'Outfit', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* Custom Animation Keyframes for Continuous Marquee */
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marquee linear infinite;
+  transition: animation-play-state 0.3s ease;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Scrollbar Customization for sidebar file trees */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: #1c1917;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #44403c;
+  border-radius: 2px;
+}
+
+/* Base custom interactive states */
+.list-none-no-arrow::-webkit-details-marker {
+  display: none !important;
+}
+.list-none-no-arrow {
+  list-style: none !important;
+}
+summary:focus {
+  outline: none;
+}
+
+/* PREMIUM LUXURY E-COMMERCE WEBSITE ANIMATION SYSTEM */
+
+/* Selective tag and class styling with initial state setup */
+h1, h2, h3, h4, h5, h6, 
+.collection-title, 
+.product-title,
+.section-title,
+.section-heading,
+nav a,
+.nav-link,
+.footer-link,
+footer a,
+.luxury-underline,
+[data-luxury-underline] {
+  position: relative;
+  max-width: max-content;
+  text-decoration: none !important; /* Turn off browser-default underlines */
+}
+
+/* Ensure no visual distraction from standard underlines */
+h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, 
+.collection-title *,
+.product-title *,
+.section-title *,
+.section-heading *,
+nav a *,
+.footer-link *,
+footer a *,
+.luxury-underline *,
+[data-luxury-underline] * {
+  text-decoration: none !important;
+}
+
+/* Set up the initial hidden state for thin elegant 1px underlines */
+h1::after, 
+h2::after, 
+h3::after, 
+h4::after, 
+h5::after, 
+h6::after,
+.collection-title::after,
+.product-title::after,
+.section-title::after,
+.section-heading::after,
+nav a::after,
+.nav-link::after,
+.footer-link::after,
+footer a::after,
+.luxury-underline::after,
+[data-luxury-underline]::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: -3px;
+  left: 0;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: right center; /* On leave, shrink to the right (slides out right) */
+  /* Smooth luxury cubic-bezier easing with duration of 0.45s and GPU acceleration */
+  transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+  transform-gpu: translateZ(0);
+}
+
+/* Individual hover rules to trigger entrance */
+h1:hover::after, 
+h2:hover::after, 
+h3:hover::after, 
+h4:hover::after, 
+h5:hover::after, 
+h6:hover::after,
+.collection-title:hover::after,
+.product-title:hover::after,
+.section-title:hover::after,
+.section-heading:hover::after,
+nav a:hover::after,
+.nav-link:hover::after,
+.footer-link:hover::after,
+footer a:hover::after,
+.luxury-underline:hover::after,
+[data-luxury-underline]:hover::after {
+  transform: scaleX(1) !important;
+  transform-origin: left center !important; /* Force entrance to swipe from left to right */
+}
+
+/* Group/Card container hovering triggers the inner underline element entrance */
+.group:hover h1::after, 
+.group:hover h2::after, 
+.group:hover h3::after, 
+.group:hover h4::after, 
+.group:hover h5::after, 
+.group:hover h6::after,
+.group:hover .collection-title::after,
+.group:hover .product-title::after,
+.group:hover .section-title::after,
+.group:hover .section-heading::after,
+.group:hover nav a::after,
+.group:hover .nav-link::after,
+.group:hover .footer-link::after,
+.group:hover footer a::after,
+.group:hover .luxury-underline::after,
+.group:hover [data-luxury-underline]::after,
+.product-card:hover .product-title::after,
+.collection-card:hover .collection-title::after,
+.featured-card:hover .section-title::after {
+  transform: scaleX(1) !important;
+  transform-origin: left center !important; /* Force parent-triggered entrance to swipe from left */
+}
+
+/* Ensure header tags wrap correctly around their content for underlines */
+h1, h2, h3, h4, h5, h6,
+.collection-title,
+.product-title,
+.section-title,
+.section-heading,
+.footer-link,
+.luxury-underline {
+  display: inline-block;
+}
+
+/* Bypasses for sections explicitly opting out */
+.title-no-underline::after,
+.no-luxury-underline::after,
+.no-luxury-underline *::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Custom Text Hover Outline Animation */
+.hover-outline-text-effect {
+  cursor: pointer;
+}
+
+.hover-outline-text-effect .premium-char {
+  transition: color 0.45s cubic-bezier(0.25, 1, 0.3, 1), -webkit-text-stroke 0.45s cubic-bezier(0.25, 1, 0.3, 1), transform 0.45s cubic-bezier(0.25, 1, 0.3, 1);
+  will-change: color, -webkit-text-stroke, transform;
+}
+
+.hover-outline-text-effect:hover .premium-char {
+  color: transparent !important;
+  -webkit-text-stroke: 1px currentColor;
+}
+
+/* Hero Section Entrance and Hover Scale system */
+.hero-image-zoom {
+  will-change: transform, filter;
+  transition: transform 1.8s cubic-bezier(0.16, 1, 0.3, 1), filter 1.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.hero-image-zoom.hero-entrance-start {
+  transform: scale(1.15);
+  filter: blur(8px);
+}
+
+.hero-image-zoom.hero-entrance-active {
+  transform: scale(1);
+  filter: blur(0px);
+}
+
+/* Silky smooth cursor hover zoom-in and zoom-out transition with high-end cubic bezier */
+.group:hover .hero-image-zoom {
+  transform: scale(1.11) !important;
+  transition: transform 1.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Fluid responsive typography for testimonial editorial headings */
+.testimonial-heading {
+  font-size: clamp(28px, 8vw, 52px);
+  line-height: 0.95;
+}
+
+@media (min-width: 640px) {
+  .testimonial-heading {
+    font-size: clamp(42px, 5vw, 70px) !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .testimonial-heading {
+    font-size: clamp(60px, 7vw, 110px) !important;
+  }
+}
+
+

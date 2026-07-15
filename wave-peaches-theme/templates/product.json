@@ -1,0 +1,23 @@
+{
+  "sections": {
+    "main": {
+      "type": "product-main",
+      "settings": {
+        "show_vendor": true,
+        "enable_image_zoom": true,
+        "show_ingredients_tab": true,
+        "show_usage_tab": true
+      }
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "You may also like"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "recommendations"
+  ]
+}

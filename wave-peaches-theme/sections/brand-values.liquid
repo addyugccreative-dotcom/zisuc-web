@@ -1,0 +1,52 @@
+<div class="brand-values-section py-16 reveal max-w-7xl mx-auto px-6">
+  <div class="mb-12 text-center">
+    <span class="font-mono text-xs uppercase tracking-widest text-[#2c1a11]/60">Why Peaches Skincare</span>
+    <h2 class="font-heading italic font-light text-2xl sm:text-3xl mt-3">{{ section.settings.title }}</h2>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-10 items-start text-center">
+    <div class="value-item flex flex-col items-center">
+      <div class="h-12 w-12 bg-[#dfddf6] rounded-full flex items-center justify-center p-3 text-purple-600 mb-6">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+      </div>
+      <h3 class="font-subheading font-medium text-sm sm:text-base uppercase tracking-wider text-[#2c1a11]">Skin Experts On Call</h3>
+      <p class="text-xs sm:text-sm text-gray-600 mt-4 max-w-xs leading-relaxed">
+        Our team of licensed estheticians is ready to help you personalize your routing and answer skincare questions.
+      </p>
+    </div>
+
+    <div class="value-item flex flex-col items-center">
+      <div class="h-12 w-12 bg-[#dfddf6] rounded-full flex items-center justify-center p-3 text-purple-600 mb-6">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+      </div>
+      <h3 class="font-subheading font-medium text-sm sm:text-base uppercase tracking-wider text-[#2c1a11]">Eco-Conscious Beauty</h3>
+      <p class="text-xs sm:text-sm text-gray-600 mt-4 max-w-xs leading-relaxed">
+        From sustainable sourcing to biodegradable packaging, every step of our process is made with the planet in mind.
+      </p>
+    </div>
+
+    <div class="value-item flex flex-col items-center">
+      <div class="h-12 w-12 bg-[#dfddf6] rounded-full flex items-center justify-center p-3 text-purple-600 mb-6">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.757a1 1 0 00.707-1.707l-5.414-5.414a1 1 0 00-1.414 0L7.23 8.293A1 1 0 007.938 10H12v4h2v-4z"/></svg>
+      </div>
+      <h3 class="font-subheading font-medium text-sm sm:text-base uppercase tracking-wider text-[#2c1a11]">Loved by Thousands</h3>
+      <p class="text-xs sm:text-sm text-gray-600 mt-4 max-w-xs leading-relaxed">
+        Trusted by a growing community of glow-getters—we're committed to creating feel-good experiences.
+      </p>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Brand Values",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Brand Values Header Title",
+      "default": "Sustainable and Organic Skincare Philosophy"
+    }
+  ]
+}
+{% endschema %}

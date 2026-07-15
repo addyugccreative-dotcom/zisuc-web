@@ -1,0 +1,6 @@
+{% comment %}
+  Render a standard color swatch button.
+  Expects:
+  - color: Named representation or hex string
+{% endcomment %}
+<button type="button" class="swatch-btn w-6 h-6 rounded-full border border-gray-400 p-0.5" style="background-color: {{ color | default: '#faf3ee' }}" aria-label="color option choice"></button>
