@@ -1,0 +1,41 @@
+<div class="newsletter-section bg-[#ebdcd3] py-20 reveal border-t border-[rgba(0,0,0,0.05)] text-center px-6" id="Newsletter-{{ section.id }}">
+  <div class="max-w-xl mx-auto flex flex-col items-center">
+    <span class="font-mono text-xs uppercase tracking-widest text-[#2c1a11]/60">Exclusive updates</span>
+    <h2 class="font-heading italic text-3xl sm:text-4xl mt-3 font-light">{{ section.settings.heading }}</h2>
+    <p class="font-body text-gray-600 mt-4 text-xs sm:text-sm max-w-sm leading-relaxed">{{ section.settings.subtext }}</p>
+
+    {%- form 'customer', class: 'mt-10 w-full' -%}
+      <input type="hidden" name="contact[tags]" value="newsletter">
+      <div class="flex flex-col sm:flex-row w-full gap-4">
+        <input type="email" 
+               name="contact[email]" 
+               class="flex-1 bg-white border border-[#2c1a11]/20 px-6 py-4 text-xs sm:text-sm rounded hover:border-[#2c1a11] focus:border-[#2c1a11] outline-none" 
+               placeholder="Enter your email to join the newsletter" 
+               required>
+        <button type="submit" class="btn shrink-0 py-4 px-8 uppercase text-xs tracking-widest font-subheading">
+          Subscribe
+        </button>
+      </div>
+    {%- endform -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Newsletter Signup",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading Title",
+      "default": "Subscribe to our newsletters"
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "Detailed subtitle description",
+      "default": "Get exclusive skincare tips, product alerts, and early access sales."
+    }
+  ]
+}
+{% endschema %}

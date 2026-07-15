@@ -1,0 +1,59 @@
+<div class="featured-collection-section reveal max-w-7xl mx-auto px-6 py-16" id="FeaturedCollection-{{ section.id }}">
+  <div class="mb-12 max-w-3xl">
+    <span class="font-mono text-xs uppercase tracking-widest text-[#2c1a11]/60">Hand-Picked Collections</span>
+    <h2 class="font-heading italic font-light text-2xl sm:text-3xl lg:text-4xl mt-3 tracking-normal leading-tight">
+      {{ section.settings.title }}
+    </h2>
+    {%- if section.settings.show_view_all -%}
+      <a href="/collections/all" class="inline-flex items-center space-x-2 text-xs uppercase tracking-widest font-subheading hover:underline block mt-4">
+        <span>Shop all collection</span>
+        <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+      </a>
+    {%- endif -%}
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10">
+    {%- for product in collections[section.settings.collection].products limit: section.settings.products_to_show -%}
+      {% render 'product-card', product: product %}
+    {%- else -%}
+      <!-- Mock list -->
+      {%- for i in (1..4) -%}
+        {% render 'mock-product-card', index: i %}
+      {%- endfor -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Featured Products Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Grid Caption / Subtitle Text",
+      "default": "Curated to nourish your skin, pamper your body, and elevate your natural beauty."
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection Target Source"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 4,
+      "max": 16,
+      "step": 4,
+      "label": "Products count limit",
+      "default": 4
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_all",
+      "label": "Show View All CTA text link",
+      "default": true
+    }
+  ]
+}
+{% endschema %}

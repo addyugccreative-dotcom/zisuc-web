@@ -1,0 +1,6 @@
+Place your uploaded images here:
+- hero_models_bg.png
+- serum.png
+- toner.png
+- sun_protection.png
+- haircare.png

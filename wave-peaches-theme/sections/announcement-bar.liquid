@@ -1,0 +1,84 @@
+{%- if section.settings.show_bar -%}
+<div id="AnnouncementBar-{{ section.id }}" class="announcement-bar" style="background-color: {{ section.settings.bg_color }}; color: {{ section.settings.text_color }};">
+  <div class="announcement-marquee" style="--marquee-speed: {{ section.settings.speed }}s">
+    <div class="marquee-content font-mono uppercase tracking-widest text-xs">
+      <span>{{ section.settings.text }} &nbsp;&bull;&nbsp; </span>
+      <span>{{ section.settings.text }} &nbsp;&bull;&nbsp; </span>
+      <span>{{ section.settings.text }} &nbsp;&bull;&nbsp; </span>
+      <span>{{ section.settings.text }} &nbsp;&bull;&nbsp; </span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .announcement-bar {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding: 10px 0;
+    position: relative;
+    z-index: 99;
+  }
+  .announcement-marquee {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+  }
+  .marquee-content {
+    display: flex;
+    animation: marquee-scroll var(--marquee-speed) linear infinite;
+    padding-left: 100%;
+  }
+  .marquee-content span {
+    padding: 0 10px;
+    flex-shrink: 0;
+  }
+  @keyframes marquee-scroll {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-50%, 0, 0); }
+  }
+</style>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_bar",
+      "label": "Show announcement bar",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Announcement Text",
+      "default": "🌟 Enjoy 10% off your first order! Use code PEACHES45 at checkout . Free shipping on orders over $150 worldwide! 🌸"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#ffd8cc"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#2c1a11"
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "min": 5,
+      "max": 30,
+      "step": 1,
+      "unit": "s",
+      "label": "Scroll Speed Duration",
+      "default": 12
+    }
+  ]
+}
+{% endschema %}
