@@ -1,6 +1,0 @@
-{
-  "name": "Peaches Store",
-  "description": "Interactive replication and visual showcase for the ZISU'O premium skincare brand, featuring 100% accurate page content for About, Certificates, Partners, and Contact Us, with a top menu bar styled to match Image 1.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
