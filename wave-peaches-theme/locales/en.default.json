@@ -1,0 +1,8 @@
+{
+  "general": {
+    "search": "Search product items",
+    "cart": "My Bag",
+    "checkout": "Proceed to Checkout",
+    "added_to_cart": "Successfully added products!"
+  }
+}

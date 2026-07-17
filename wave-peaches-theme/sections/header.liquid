@@ -1,0 +1,117 @@
+<div class="header-wrapper" id="HeaderWrapper-{{ section.id }}" style="background-color: {{ section.settings.bg_color }};">
+  <div class="header-container max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+    <!-- Hamburger Icon (Mobile) -->
+    <button type="button" class="header-hamburger lg:hidden" aria-label="Menu" id="HamburgerTrigger">
+      <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+
+    <!-- Nav Menu (Desktop Left/Right depending on preference) -->
+    <nav class="hidden lg:flex space-x-8 text-sm font-subheading uppercase tracking-wider" role="navigation">
+      {%- for link in linklists[section.settings.menu].links -%}
+        <div class="menu-item relative group">
+          <a href="{{ link.url }}" class="hover:underline py-2 block">{{ link.title }}</a>
+          {%- if link.links != blank -%}
+            <div class="nav-dropdown absolute hidden group-hover:block top-full left-0 bg-white shadow-lg py-4 px-6 border border-gray-100 min-w-[200px] z-50">
+              {%- for childlink in link.links -%}
+                <a href="{{ childlink.url }}" class="block py-2 text-gray-700 hover:text-black text-xs uppercase">{{ childlink.title }}</a>
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </nav>
+
+    <!-- Logo Centered -->
+    <div class="header-logo text-center">
+      <a href="/" class="font-heading italic font-semibold text-2xl tracking-widest uppercase flex items-center justify-center">
+        {%- if section.settings.logo != blank -%}
+          <img src="{{ section.settings.logo | image_url: width: 140 }}" alt="{{ shop.name }}" class="h-8 max-w-full">
+        {%- else -%}
+          {{ shop.name }}<span class="text-xs align-super font-serif">©</span>
+        {%- endif -%}
+      </a>
+    </div>
+
+    <!-- Actions (Search, Cart) -->
+    <div class="header-actions flex items-center space-x-6">
+      <button type="button" class="action-search hover:opacity-75" aria-label="Search">
+        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+      </button>
+
+      <button type="button" class="action-cart hover:opacity-75 relative" aria-label="Cart" id="CartTrigger">
+        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+        <span class="cart-badge absolute -top-1.5 -right-1.5 bg-black text-white text-[10px] w-4.5 h-4.5 rounded-full flex items-center justify-center font-mono">0</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile Hamburger Menu Drawer -->
+<div class="mobile-drawer fixed inset-y-0 left-0 w-80 bg-white z-[200] transform -translate-x-full transition-transform duration-300" id="MobileMenuDrawer">
+  <div class="drawer-header flex justify-between items-center px-6 py-5 border-b">
+    <span class="font-subheading uppercase text-sm tracking-wider">Peaches Store</span>
+    <button type="button" class="close-drawer" id="MobileDrawerClose">
+      <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="drawer-body px-6 py-6 space-y-6">
+    {%- for link in linklists[section.settings.menu].links -%}
+      <div class="mobile-nav-item border-b pb-3">
+        <a href="{{ link.url }}" class="block font-medium text-lg">{{ link.title }}</a>
+        {%- if link.links != blank -%}
+          <div class="pl-4 mt-2 space-y-2">
+            {%- for childlink in link.links -%}
+              <a href="{{ childlink.url }}" class="block text-gray-500 text-sm py-1">{{ childlink.title }}</a>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+<div class="drawer-overlay fixed inset-0 bg-black/40 hidden z-[190]" id="MobileDrawerOverlay"></div>
+
+<style>
+  .header-wrapper {
+    transition: background-color var(--transition-speed) ease;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .header-actions button {
+    cursor: pointer;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Header & Navigation",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Primary Navigation",
+      "default": "main-menu"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo Image"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Navbar Background Color",
+      "default": "#faf3ee"
+    },
+    {
+      "type": "select",
+      "id": "logo_position",
+      "label": "Logo Alignment",
+      "options": [
+        { "value": "left", "label": "Left aligned" },
+        { "value": "center", "label": "Centered" }
+      ],
+      "default": "center"
+    }
+  ]
+}
+{% endschema %}

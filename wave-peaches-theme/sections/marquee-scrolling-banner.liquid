@@ -1,0 +1,95 @@
+<div id="MarqueeBanner-{{ section.id }}" class="marquee-scrolling-banner" style="background-color: {{ section.settings.bg_color }}; color: {{ section.settings.text_color }}; py-6 border-y border-[rgba(0,0,0,0.1)]">
+  <div class="generic-marquee" style="--marquee-speed: {{ section.settings.speed }}s">
+    <div class="marquee-content-generic font-heading italic text-lg sm:text-2xl lg:text-3xl uppercase font-light tracking-wide py-4 flex gap-x-12">
+      <span>{{ section.settings.text_1 }}</span>
+      <span>&bull;</span>
+      <span>{{ section.settings.text_2 }}</span>
+      <span>&bull;</span>
+      <span>{{ section.settings.text_3 }}</span>
+      <span>&bull;</span>
+      
+      <!-- Duplicate same set to make infinite looping smooth -->
+      <span>{{ section.settings.text_1 }}</span>
+      <span>&bull;</span>
+      <span>{{ section.settings.text_2 }}</span>
+      <span>&bull;</span>
+      <span>{{ section.settings.text_3 }}</span>
+      <span>&bull;</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .marquee-scrolling-banner {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  .generic-marquee {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+  }
+  .marquee-content-generic {
+    display: flex;
+    animation: generic-marquee-scroll var(--marquee-speed) linear infinite;
+    white-space: nowrap;
+    width: max-content;
+  }
+  .marquee-content-generic span {
+    padding: 0 10px;
+    flex-shrink: 0;
+  }
+  @keyframes generic-marquee-scroll {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-50%, 0, 0); }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Scrolling Marquee",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Scrolling Text Phrase 1",
+      "default": "Kind to your skin, gentle on the planet."
+    },
+    {
+      "type": "text",
+      "id": "text_2",
+      "label": "Scrolling Text Phrase 2",
+      "default": "Before using Peaches vs After using Peaches"
+    },
+    {
+      "type": "text",
+      "id": "text_3",
+      "label": "Scrolling Text Phrase 3",
+      "default": "Join the skin community @peachesvibe"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Banner Background",
+      "default": "#ebdcd3"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Banner Text Color",
+      "default": "#2c1a11"
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "s",
+      "label": "Banner speed duration",
+      "default": 30
+    }
+  ]
+}
+{% endschema %}
