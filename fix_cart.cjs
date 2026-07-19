@@ -1,4 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+const fs = require('fs');
+
+const code = `import React, { useState, useEffect, useRef } from 'react';
 import { X, Trash2, Plus, Minus, ShoppingBag, Loader2, Check, Truck, Gift, Box, ShieldCheck } from 'lucide-react';
 import { CartItem, CustomizerSettings, Product } from '../types';
 import { LuxuryButton } from './LuxuryButton';
@@ -180,24 +182,24 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
     <>
       {/* Background overlay */}
       <div
-        className={`fixed inset-0 bg-black/40 z-[150] transition-opacity duration-300 ${
+        className={\`fixed inset-0 bg-black/40 z-[150] transition-opacity duration-300 \${
           isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-        }`}
+        }\`}
         onClick={onClose}
       />
 
       {/* Cart Drawer Panel Container */}
       <div
-        className={`fixed inset-y-0 right-0 w-full sm:w-96 max-w-full z-[160] flex flex-col shadow-lg transition-transform duration-300 transform select-none ${
+        className={\`fixed inset-y-0 right-0 w-full sm:w-96 max-w-full z-[160] flex flex-col shadow-lg transition-transform duration-300 transform select-none \${
           isOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
+        }\`}
         style={{
           backgroundColor: '#ffffff',
           color: '#1c1917',
         }}
       >
         {toastMessage && (
-          <div className="absolute top-24 left-1/2 -translate-x-1/2 w-[90%] z-50 bg-white shadow-md border rounded-lg p-3 text-center animate-in slide-in-from-top-4 fade-in duration-300" style={{ borderColor: `${settings.colorText}1a` }}>
+          <div className="absolute top-24 left-1/2 -translate-x-1/2 w-[90%] z-50 bg-white shadow-md border rounded-lg p-3 text-center animate-in slide-in-from-top-4 fade-in duration-300" style={{ borderColor: \`\${settings.colorText}1a\` }}>
             <span className="text-xs font-bold text-teal-700">{toastMessage}</span>
           </div>
         )}
@@ -220,13 +222,13 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
             )}
           </span>
           
-          <div className="relative w-[96%] mx-auto h-2 bg-neutral-200 rounded-full mt-5 mb-4">
+          <div className="relative w-[90%] mx-auto h-2 bg-neutral-200 rounded-full mt-5 mb-4">
             {/* Striped progress bar effect */}
             <div
               className="absolute top-0 left-0 h-full rounded-full transition-all duration-500 z-10 overflow-hidden"
               style={{
                 backgroundColor: '#00c4ba',
-                width: `${progressPercent}%`,
+                width: \`\${progressPercent}%\`,
               }}
             >
               <div className="w-full h-full" style={{
@@ -239,11 +241,11 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
               const leftPercent = getPositionPercent(idx);
               const Icon = tier.icon;
               return (
-                <div key={idx} className="absolute top-1/2 -translate-y-1/2 z-20 flex flex-col items-center" style={{ left: `${leftPercent}%`, transform: `translate(-50%, -50%)` }}>
-                  <div className={`w-8 h-8 rounded-full border-2 flex items-center justify-center bg-white transition-colors duration-300 ${isUnlocked ? 'border-[#00c4ba] text-[#00c4ba]' : 'border-neutral-300 text-neutral-400'}`}>
+                <div key={idx} className="absolute top-1/2 -translate-y-1/2 z-20 flex flex-col items-center" style={{ left: \`\${leftPercent}%\`, transform: \`translate(-50%, -50%)\` }}>
+                  <div className={\`w-8 h-8 rounded-full border-2 flex items-center justify-center bg-white transition-colors duration-300 \${isUnlocked ? 'border-[#00c4ba] text-[#00c4ba]' : 'border-neutral-300 text-neutral-400'}\`}>
                     <Icon className="w-4 h-4" />
                   </div>
-                  <span className={`absolute top-10 text-[10px] leading-tight text-center transition-colors font-medium whitespace-nowrap ${isUnlocked ? 'text-[#00c4ba]' : 'text-gray-500'}`}>
+                  <span className={\`absolute top-10 text-[10px] leading-tight text-center transition-colors font-medium whitespace-nowrap \${isUnlocked ? 'text-[#00c4ba]' : 'text-gray-500'}\`}>
                     {tier.shortLabel}
                   </span>
                 </div>
@@ -272,7 +274,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                 <div
                 key={idx}
                 className="flex gap-4 border-b pb-4 items-center animate-in fade-in duration-300"
-                style={{ borderColor: `${settings.colorText}15` }}
+                style={{ borderColor: \`\${settings.colorText}15\` }}
               >
                 {/* Product cover */}
                 <div className="w-20 h-20 sm:w-24 sm:h-24 aspect-square overflow-hidden bg-white border border-gray-100 rounded-lg shrink-0">
@@ -346,14 +348,19 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
             </div>
 
             {upsellProducts.length > 0 && (
-              <div className="mt-6">
-                <h3 className="font-sans font-extrabold text-[11px] tracking-widest text-stone-900 uppercase mb-4 border-t pt-4">
-                  CONTINUE SHOPPING
-                </h3>
+              <div className="mt-8 pt-6">
+                <div className="flex gap-1 justify-center mb-4">
+                  <div className="w-1.5 h-1.5 rounded-full bg-stone-900"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-gray-300"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-gray-300"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-gray-300"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-gray-300"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-gray-300"></div>
+                </div>
                 
                 <div className="space-y-4">
                   {upsellProducts.map((prod) => (
-                    <div key={prod.id} className="flex gap-4 items-center bg-white transition" style={{ borderColor: `${settings.colorText}0d` }}>
+                    <div key={prod.id} className="flex gap-4 items-center bg-white transition" style={{ borderColor: \`\${settings.colorText}0d\` }}>
                       <div 
                         className="w-14 h-14 aspect-square overflow-hidden bg-white shrink-0 cursor-pointer" 
                         onClick={() => onProductClick && onProductClick(prod.id)}
@@ -427,13 +434,16 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
             </label>
             
             {/* Payment Icons */}
-            <div className="mt-4 flex justify-center">
-              <img 
-                src="/payment gateway image.png" 
-                alt="Secure Payment Gateways" 
-                className="h-10 w-auto object-contain"
-                referrerPolicy="no-referrer"
-              />
+            <div className="flex flex-wrap justify-center items-center gap-1.5 mt-4">
+               <img src="https://cdn.shopify.com/s/assets/payment_icons/american_express-12858714bc10cdf384b62b8f41d20f56d8c6b1f9f3b024628ee3269fdc7bf36f.svg" alt="Amex" className="h-6" />
+               <img src="https://cdn.shopify.com/s/assets/payment_icons/apple_pay-f6db0077dc7c325b436ecbdcf254239100b35b70b1663bf08d21589fe6820cb6.svg" alt="Apple Pay" className="h-6" />
+               <img src="https://cdn.shopify.com/s/assets/payment_icons/diners_club-16436b9fb6dd9060edb51f1c7c44e23941e544ad798282d6aef160431ce56d3d.svg" alt="Diners Club" className="h-6" />
+               <img src="https://cdn.shopify.com/s/assets/payment_icons/discover-cc9808e50193c7496e7a5245eb86d5e06f02e2476c0fe70f2c4001670b1359f6.svg" alt="Discover" className="h-6" />
+               <img src="https://cdn.shopify.com/s/assets/payment_icons/google_pay-c66a29c63facf2053bf6935298f26af5e1daaa0ec7bb429ffb372659103c8008.svg" alt="Google Pay" className="h-6" />
+               <img src="https://cdn.shopify.com/s/assets/payment_icons/master-173035bc8124581983d4efa50cf8626e8553c2b311353fbf67485f9c1a2b88d1.svg" alt="Mastercard" className="h-6" />
+               <img src="https://cdn.shopify.com/s/assets/payment_icons/paypal-49e4c1e03244b6d2de0d270ca0d22dd15da6e92cc7266e93eb43762df5aa355d.svg" alt="PayPal" className="h-6" />
+               <img src="https://cdn.shopify.com/s/assets/payment_icons/shop_pay-45a165684d0bda0ccb5380ee464de13a0c5fc20fbdf74e48816c117f7baf0a94.svg" alt="Shop Pay" className="h-6" />
+               <img src="https://cdn.shopify.com/s/assets/payment_icons/visa-319d545c6fd255c9aad5eeaad21fd6f7f7b4f5976ea81f9f2178229410ea9105.svg" alt="Visa" className="h-6" />
             </div>
           </div>
         )}
@@ -441,3 +451,5 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
     </>
   );
 };
+`
+fs.writeFileSync('src/components/CartDrawer.tsx', code);
