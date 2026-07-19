@@ -9,8 +9,10 @@ import { ProductReviewsSection } from './ProductReviewsSection';
 import { LuxuryButton } from './LuxuryButton';
 import { Currency, convertAndFormatPrice, parseUsdPrice, SUPPORTED_CURRENCIES } from '../lib/currency';
 import { ReviewUgcSection } from './ReviewUgcSection';
-import { ChromaKeyVideo } from './ChromaKeyVideo';
+import { ProductFAQSection } from './ProductFAQSection';
+import { CommunityInstagramFeed } from './CommunityInstagramFeed';
 import { OptimizedVideo } from './OptimizedVideo';
+import { ColorReplaceVideo } from './ColorReplaceVideo';
 import { getProductBadge, getBadgeConfig } from './ProductCard';
 
 const getBrighteningRightImageForId = (id: string, title?: string): string => {
@@ -1026,7 +1028,7 @@ const KeyIngredientsSection: React.FC<KeyIngredientsSectionProps> = ({ product }
         className="flex flex-col md:grid md:grid-cols-[1.2fr_1.6fr_1.2fr] lg:grid-cols-12 gap-8 md:gap-6 lg:gap-8 items-center"
       >
         {/* LEFT COLUMN: 2 ingredients */}
-        <div id="left-ingredients-col" className="col-span-1 lg:col-span-3 w-full flex flex-col gap-10 sm:gap-16 order-1">
+        <div id="left-ingredients-col" className="col-span-1 lg:col-span-3 w-full flex flex-col gap-10 sm:gap-16 order-1 relative z-10">
           {leftIngredients.map((ing, idx) => (
             <motion.div 
               key={idx}
@@ -1063,7 +1065,7 @@ const KeyIngredientsSection: React.FC<KeyIngredientsSectionProps> = ({ product }
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "0px 0px -25% 0px" }}
-          className="col-span-1 lg:col-span-6 w-full flex justify-center items-center order-2 py-4 lg:py-6"
+          className="col-span-1 lg:col-span-6 w-full flex justify-center items-center order-2 py-4 lg:py-6 relative z-0"
         >
           <div className="relative w-full max-w-[280px] sm:max-w-[450px] md:max-w-[550px] lg:max-w-[700px] flex justify-center items-center">
             {/* Elegant luxury floating shadow underneath */}
@@ -1087,12 +1089,9 @@ const KeyIngredientsSection: React.FC<KeyIngredientsSectionProps> = ({ product }
                   transition: { duration: 0.4 }
                 }}
               >
-                <ChromaKeyVideo 
+                <ColorReplaceVideo 
                   src="/360 rotate Kira 60˚ C-Tide Cream.mp4"
-                  className="w-full h-full"
-                  removeSilverCap={true}
-                  zoom={1.35}
-                  aboveTheFold={true}
+                  className="w-full h-full object-contain object-center"
                 />
               </motion.div>
             ) : isEbapCleanser ? (
@@ -1112,11 +1111,9 @@ const KeyIngredientsSection: React.FC<KeyIngredientsSectionProps> = ({ product }
                   transition: { duration: 0.4 }
                 }}
               >
-                <ChromaKeyVideo 
+                <ColorReplaceVideo 
                   src="/360 rotate E-BAP Powder Cleanser.webm"
-                  className="w-full h-full"
-                  zoom={1.25}
-                  aboveTheFold={true}
+                  className="w-full h-full object-contain object-center"
                 />
               </motion.div>
             ) : isCicaTrigger ? (
@@ -1136,11 +1133,9 @@ const KeyIngredientsSection: React.FC<KeyIngredientsSectionProps> = ({ product }
                   transition: { duration: 0.4 }
                 }}
               >
-                <ChromaKeyVideo 
+                <ColorReplaceVideo 
                   src="/360 rotate Cica Pin Cell Skin Trigger (Set of 2).webm"
-                  className="w-full h-full"
-                  zoom={1.08}
-                  aboveTheFold={true}
+                  className="w-full h-full object-contain object-center"
                 />
               </motion.div>
             ) : isGalachionePad ? (
@@ -1160,11 +1155,9 @@ const KeyIngredientsSection: React.FC<KeyIngredientsSectionProps> = ({ product }
                   transition: { duration: 0.4 }
                 }}
               >
-                <ChromaKeyVideo 
+                <ColorReplaceVideo 
                   src="/360 rotate Galachione Ampoule Pad.webm"
-                  className="w-full h-full"
-                  zoom={1.25}
-                  aboveTheFold={true}
+                  className="w-full h-full object-contain object-center"
                 />
               </motion.div>
             ) : isKiraSerum ? (
@@ -1184,11 +1177,10 @@ const KeyIngredientsSection: React.FC<KeyIngredientsSectionProps> = ({ product }
                   transition: { duration: 0.4 }
                 }}
               >
-                <ChromaKeyVideo 
+                <ColorReplaceVideo 
                   src="/360 rotate Kira 60˚ C-Tide Serum.webm"
-                  className="w-full h-full"
-                  zoom={1.08}
-                  aboveTheFold={true}
+                  className="w-full h-full object-contain object-center"
+                  reduceSilverLine={true}
                 />
               </motion.div>
             ) : isKiraMist ? (
@@ -1208,11 +1200,9 @@ const KeyIngredientsSection: React.FC<KeyIngredientsSectionProps> = ({ product }
                   transition: { duration: 0.4 }
                 }}
               >
-                <ChromaKeyVideo 
+                <ColorReplaceVideo 
                   src="/360 rotate Kira 60˚ C-Tide Multi Mist.webm"
-                  className="w-full h-full"
-                  zoom={1.08}
-                  aboveTheFold={true}
+                  className="w-full h-full object-contain object-center"
                 />
               </motion.div>
             ) : (
@@ -1242,7 +1232,7 @@ const KeyIngredientsSection: React.FC<KeyIngredientsSectionProps> = ({ product }
         </motion.div>
 
         {/* RIGHT COLUMN: 2 ingredients */}
-        <div id="right-ingredients-col" className="col-span-1 lg:col-span-3 w-full flex flex-col gap-10 sm:gap-16 order-3">
+        <div id="right-ingredients-col" className="col-span-1 lg:col-span-3 w-full flex flex-col gap-10 sm:gap-16 order-3 relative z-10">
           {rightIngredients.map((ing, idx) => (
             <motion.div 
               key={idx}
@@ -2257,9 +2247,6 @@ export const ProductMain: React.FC<ProductMainProps> = ({
       </div>
     </motion.section>
 
-    {/* Review UGC Section */}
-    <ReviewUgcSection />
-
     {/* Section 2: Two-column Editorial Section 1 ("Brightening support...") */}
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-24 lg:py-28">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -2387,6 +2374,9 @@ export const ProductMain: React.FC<ProductMainProps> = ({
       </div>
     </div>
 
+    {/* Review UGC Section moved above Proven Results */}
+    <ReviewUgcSection />
+
     {/* Section 5: Proven Results with circular progress counting on view */}
     {(() => {
       const [metric1, metric2] = getProvenResultsForProduct(product.id, product.title);
@@ -2478,6 +2468,12 @@ export const ProductMain: React.FC<ProductMainProps> = ({
       activeCurrency={activeCurrency}
       themeColor={themeColor}
     />
+
+    {/* Join the Skin Community Section */}
+    <CommunityInstagramFeed />
+
+    {/* Product FAQ Section */}
+    <ProductFAQSection product={product} />
 
       {/* Premium Floating Sticky Action Card with smooth fade-in */}
       <motion.div

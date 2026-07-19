@@ -1,15 +1,13 @@
-/**
- * Shared Type Definitions for the Shopify Wave Theme Customizer & Simulator
- */
-
 export interface Product {
-  id: string; // handle/id
+  id: string;
+  shopifyId?: string;
+  variantId?: string;
   title: string;
   vendor: string;
   price: string;
   compareAtPrice?: string;
   description: string;
-  images: string[]; // array of Unsplash URLs or mock photos
+  images: string[];
   tags: string[];
   colors: { name: string; hex: string }[];
   ingredients: string;
@@ -17,6 +15,7 @@ export interface Product {
   shipping: string;
   rating: number;
   reviewsCount: number;
+  variants?: any[];
 }
 
 export interface CartItem {
@@ -26,10 +25,11 @@ export interface CartItem {
 }
 
 export interface CustomizerSettings {
+  colorText: string;
   colorBg: string;
   colorBgSecondary: string;
-  colorText: string;
   colorAccent: string;
+  colorBorder: string;
   colorButton: string;
   colorButtonText: string;
   colorButtonHover: string;
@@ -53,8 +53,4 @@ export interface CustomizerSettings {
   promoImagePosition: 'left' | 'right';
   
   animationSpeed: '0.15s' | '0.3s' | '0.5s';
-}
-
-export interface MockProductData {
-  products: Product[];
 }

@@ -74,10 +74,11 @@ const InstagramCardComponent: React.FC<InstagramCardComponentProps> = ({
   isTablet
 }) => {
   // Map smooth scroll value to horizontal position
+  // The animation starts at 0.15 and finishes at 0.85, leaving the first and last 15% of scroll to just hold the cards in place
   const x_card = useTransform(
     scrollYProgress, 
-    [0, 1], 
-    [idx * spacing, (idx - (totalCards - 1)) * spacing]
+    [0, 0.15, 0.85, 1], 
+    [idx * spacing, idx * spacing, (idx - (totalCards - 1)) * spacing, (idx - (totalCards - 1)) * spacing]
   );
 
   // Parabolic y-coordinate arc creates a beautiful, seamless rainbow curve
@@ -182,7 +183,7 @@ export const CommunityInstagramFeed: React.FC = () => {
     <section 
       ref={containerRef}
       id="community-instagram-feed-section"
-      className="relative w-full h-[380vh] bg-[#FAF5F0] select-none" // Generous track height to create a majestic, controlled scroll speed
+      className="relative w-full h-[450vh] bg-[#FAF5F0] select-none" // Generous track height to create a majestic, controlled scroll speed + hold at end
     >
       {/* Sticky viewport frame */}
       <div className="sticky top-0 w-full h-screen overflow-hidden flex flex-col justify-between py-12 md:py-16 bg-[#FAF5F0]">

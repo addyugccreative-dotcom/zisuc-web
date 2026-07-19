@@ -64,8 +64,14 @@ export const SafeImage: React.FC<SafeImageProps> = ({ src, fallbackSrc, alt, cla
   }, [imgSrc]);
 
   // Combine original styles with performance properties
+  const classes = className.split(' ');
+  const objectFitClasses = classes.filter(cls => cls.startsWith('object-')).join(' ') || 'object-cover';
+  const otherClasses = classes.filter(cls => !cls.startsWith('object-')).join(' ');
+
+  const hasPosition = classes.some(cls => ['absolute', 'relative', 'fixed', 'sticky'].includes(cls));
+
   return (
-    <div className={`relative overflow-hidden ${className}`} style={{ contain: 'paint layout' }}>
+    <div className={`${hasPosition ? '' : 'relative'} overflow-hidden ${otherClasses}`}>
       {/* Blurred preview block matching 120hz fluid specs */}
       {!isLoaded && !hasFailed && (
         <div 
@@ -87,7 +93,7 @@ export const SafeImage: React.FC<SafeImageProps> = ({ src, fallbackSrc, alt, cla
         referrerPolicy="no-referrer"
         decoding="async"
         loading={props.loading || "lazy"}
-        className={`w-full h-full object-cover transition-all duration-[400ms] cubic-bezier(0.16, 1, 0.3, 1) transform-gpu ${
+        className={`w-full h-full ${objectFitClasses} transition-all duration-[400ms] cubic-bezier(0.16, 1, 0.3, 1) transform-gpu ${
           isLoaded ? 'opacity-100 scale-100 blur-0' : 'opacity-0 scale-[1.02] blur-[4px]'
         }`}
         style={{

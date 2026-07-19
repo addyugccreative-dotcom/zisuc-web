@@ -48,10 +48,6 @@ const ParallaxImage = ({
   return (
     <motion.div 
       style={{ y }}
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-10%" }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
       className={`absolute z-10 pointer-events-none ${className}`}
     >
       <img 
@@ -84,14 +80,14 @@ const ParallaxQuoteSection: React.FC = () => {
           
           <TextReveal />
           
-          <div className="flex flex-col items-center justify-center space-y-4">
+          <div className="relative flex flex-col items-center justify-center space-y-4 w-full">
             {/* Signature Auto-fill */}
             <motion.div 
               initial={{ clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)" }}
               whileInView={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)" }}
               viewport={{ once: true, margin: "-10%" }}
               transition={{ duration: 1.5, delay: 0.8, ease: "easeOut" }}
-              className="w-48 md:w-64 flex justify-center py-4"
+              className="w-48 md:w-64 flex justify-center py-4 relative z-20"
             >
               <h3 className="font-heading italic text-4xl md:text-5xl text-stone-900 tracking-wide">
                 Zisu'c
@@ -104,14 +100,14 @@ const ParallaxQuoteSection: React.FC = () => {
 
       {/* Floating Images mapped to absolute positions in the 300vh container */}
       
-      {/* Pair 1 - Near Top */}
+      {/* Pair 1 - Near Top (below heading initially) */}
       <ParallaxImage 
         src="/Smooth Glide section image frame 1.png"
         alt="Image 1"
         progress={scrollYProgress}
         yOffset={150}
         isCircle={true}
-        className="top-[5%] left-[5%] md:left-[15%] w-28 md:w-48 rotate-[-15deg]"
+        className="top-[22%] left-[5%] md:left-[15%] w-28 md:w-48 rotate-[-15deg]"
       />
       <ParallaxImage 
         src="/Smooth Glide section image frame 2.png"
@@ -119,7 +115,7 @@ const ParallaxQuoteSection: React.FC = () => {
         progress={scrollYProgress}
         yOffset={120}
         isCircle={true}
-        className="top-[12%] right-[5%] md:right-[15%] w-28 md:w-48 rotate-[10deg]"
+        className="top-[25%] right-[5%] md:right-[15%] w-28 md:w-48 rotate-[10deg]"
       />
 
       {/* Pair 2 - Upper Middle */}
@@ -128,14 +124,14 @@ const ParallaxQuoteSection: React.FC = () => {
         alt="Image 3"
         progress={scrollYProgress}
         yOffset={180}
-        className="top-[30%] left-[8%] md:left-[12%] w-28 md:w-48 rotate-[-5deg]"
+        className="top-[40%] left-[8%] md:left-[12%] w-28 md:w-48 rotate-[-5deg]"
       />
       <ParallaxImage 
         src="/Smooth Glide section image frame 4.png"
         alt="Image 4"
         progress={scrollYProgress}
         yOffset={140}
-        className="top-[38%] right-[10%] md:right-[20%] w-28 md:w-44 rotate-[15deg]"
+        className="top-[48%] right-[10%] md:right-[20%] w-28 md:w-44 rotate-[15deg]"
       />
 
       {/* Pair 3 - Lower Middle */}
@@ -144,14 +140,14 @@ const ParallaxQuoteSection: React.FC = () => {
         alt="Image 5"
         progress={scrollYProgress}
         yOffset={160}
-        className="top-[55%] left-[10%] md:left-[18%] w-28 md:w-44 rotate-[-10deg]"
+        className="top-[60%] left-[10%] md:left-[18%] w-28 md:w-44 rotate-[-10deg]"
       />
       <ParallaxImage 
         src="/Smooth Glide section image frame 6.png"
         alt="Image 6"
         progress={scrollYProgress}
         yOffset={200}
-        className="top-[65%] right-[8%] md:right-[15%] w-32 md:w-56 rotate-[5deg]"
+        className="top-[70%] right-[8%] md:right-[15%] w-32 md:w-56 rotate-[5deg]"
       />
 
       {/* Pair 4 - Near Bottom */}
@@ -160,7 +156,7 @@ const ParallaxQuoteSection: React.FC = () => {
         alt="Image 7"
         progress={scrollYProgress}
         yOffset={130}
-        className="top-[80%] left-[15%] md:left-[25%] w-28 md:w-48 rotate-[-10deg]"
+        className="top-[82%] left-[15%] md:left-[25%] w-28 md:w-48 rotate-[-10deg]"
       />
       <ParallaxImage 
         src="/Smooth Glide section image frame 8.png"
