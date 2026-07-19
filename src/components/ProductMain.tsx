@@ -677,12 +677,12 @@ const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
       </div>
 
       {/* BEFORE Badge styled exactly like first screenshot */}
-      <div className="absolute bottom-5 left-5 bg-stone-900/80 backdrop-blur-md text-stone-100 text-[10px] sm:text-xs font-mono font-medium py-1.5 px-3.5 uppercase tracking-widest rounded-[4px] select-none pointer-events-none z-10">
+      <div className="absolute bottom-5 left-5 bg-stone-900/80 backdrop-blur-sm text-stone-100 text-[10px] sm:text-xs font-mono font-medium py-1.5 px-3.5 uppercase tracking-widest rounded-[4px] select-none pointer-events-none z-10">
         BEFORE
       </div>
 
       {/* AFTER Badge styled exactly like first screenshot */}
-      <div className="absolute bottom-5 right-5 bg-stone-900/80 backdrop-blur-md text-stone-100 text-[10px] sm:text-xs font-mono font-medium py-1.5 px-3.5 uppercase tracking-widest rounded-[4px] select-none pointer-events-none z-10">
+      <div className="absolute bottom-5 right-5 bg-stone-900/80 backdrop-blur-sm text-stone-100 text-[10px] sm:text-xs font-mono font-medium py-1.5 px-3.5 uppercase tracking-widest rounded-[4px] select-none pointer-events-none z-10">
         AFTER
       </div>
       
@@ -1041,7 +1041,7 @@ const KeyIngredientsSection: React.FC<KeyIngredientsSectionProps> = ({ product }
               className={`flex flex-col items-center text-center max-w-[170px] xs:max-w-[200px] sm:max-w-sm group cursor-pointer ${idx === 0 ? 'self-start md:self-center' : 'self-end md:self-center'}`}
             >
               {/* Image Frame */}
-              <div className="w-28 h-28 xs:w-32 xs:h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 flex items-center justify-center relative mb-3 sm:mb-5 lg:mb-6 transition-all duration-500 hover:scale-105 rounded-full overflow-hidden bg-white/50 border border-stone-200/40 shadow-sm">
+              <div className="w-28 h-28 xs:w-32 xs:h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 flex items-center justify-center relative mb-3 sm:mb-5 lg:mb-6 transition duration-500 hover:scale-105 rounded-full overflow-hidden bg-white/50 border border-stone-200/40 shadow-sm">
                 <img decoding="async" loading="lazy" 
                   src={ing.image} 
                   alt={ing.title} 
@@ -1245,7 +1245,7 @@ const KeyIngredientsSection: React.FC<KeyIngredientsSectionProps> = ({ product }
               className={`flex flex-col items-center text-center max-w-[170px] xs:max-w-[200px] sm:max-w-sm group cursor-pointer ${idx === 0 ? 'self-start md:self-center' : 'self-end md:self-center'}`}
             >
               {/* Image Frame */}
-              <div className="w-28 h-28 xs:w-32 xs:h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 flex items-center justify-center relative mb-3 sm:mb-5 lg:mb-6 transition-all duration-500 hover:scale-105 rounded-full overflow-hidden bg-white/50 border border-stone-200/40 shadow-sm">
+              <div className="w-28 h-28 xs:w-32 xs:h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 flex items-center justify-center relative mb-3 sm:mb-5 lg:mb-6 transition duration-500 hover:scale-105 rounded-full overflow-hidden bg-white/50 border border-stone-200/40 shadow-sm">
                 <img decoding="async" loading="lazy" 
                   src={ing.image} 
                   alt={ing.title} 
@@ -1334,13 +1334,13 @@ const HowToUseSection: React.FC<HowToUseSectionProps> = ({
                 key={idx}
                 type="button"
                 onClick={() => setActiveStepIdx(idx)}
-                className="w-full text-left py-8 sm:py-10 border-b border-stone-850/10 focus:outline-hidden transition-all duration-300 group cursor-pointer"
+                className="w-full text-left py-8 sm:py-10 border-b border-stone-850/10 focus:outline-hidden transition duration-300 group cursor-pointer"
               >
                 <div className="flex items-baseline gap-6 sm:gap-10">
                   <span className={`font-serif text-lg sm:text-xl md:text-2xl transition-colors duration-300 select-none ${isActive ? 'text-stone-900 font-normal' : 'text-stone-500/60'}`}>
                     {step.num}
                   </span>
-                  <h4 className={`transition-all duration-300 tracking-tight ${isActive ? 'font-serif italic font-normal text-stone-900 text-4xl sm:text-5xl lg:text-[54px] leading-tight' : 'font-serif font-light text-stone-600/80 text-3xl sm:text-4xl lg:text-[42px] leading-tight hover:text-stone-900'}`}>
+                  <h4 className={`transition duration-300 tracking-tight ${isActive ? 'font-serif italic font-normal text-stone-900 text-4xl sm:text-5xl lg:text-[54px] leading-tight' : 'font-serif font-light text-stone-600/80 text-3xl sm:text-4xl lg:text-[42px] leading-tight hover:text-stone-900'}`}>
                     {step.title}
                   </h4>
                 </div>
@@ -1756,7 +1756,7 @@ export const ProductMain: React.FC<ProductMainProps> = ({
                   key={idx}
                   type="button"
                   onClick={() => setActiveImageIdx(idx)}
-                  className="shrink-0 snap-center aspect-square w-12 sm:w-[56px] overflow-hidden rounded bg-[#FAF5F0] hover:opacity-100 transition transition-all duration-300 relative border p-[2px]"
+                  className="shrink-0 snap-center aspect-square w-12 sm:w-[56px] overflow-hidden rounded bg-[#FAF5F0] hover:opacity-100 transition transition duration-300 relative border p-[2px]"
                   style={{
                     borderColor: activeImageIdx === idx ? '#4c39fa' : 'transparent',
                     boxShadow: activeImageIdx === idx ? '0 0 0 1px #4c39fa' : 'none',
@@ -1957,15 +1957,15 @@ export const ProductMain: React.FC<ProductMainProps> = ({
               type="button" 
               onMouseEnter={() => setIsBuyHovered(true)}
               onMouseLeave={() => setIsBuyHovered(false)}
-              className="relative w-full h-[54px] overflow-hidden group cursor-pointer shadow-md bg-white rounded-none focus:outline-none flex items-center justify-center transition-all duration-300"
+              className="relative w-full h-[54px] overflow-hidden group cursor-pointer shadow-md bg-white rounded-none focus:outline-none flex items-center justify-center transition duration-300"
               style={{ border: `1px solid ${themeColor}` }}
             >
               <div 
-                className="absolute left-1/2 top-[100%] w-[1000px] h-[1000px] -translate-x-1/2 rounded-[45%] transition-all duration-[1800ms] ease-in-out group-hover:duration-[2000ms] group-hover:-translate-y-[600px] group-hover:rotate-[180deg] z-0 pointer-events-none" 
+                className="absolute left-1/2 top-[100%] w-[1000px] h-[1000px] -translate-x-1/2 rounded-[45%] transition duration-[1800ms] ease-in-out group-hover:duration-[2000ms] group-hover:-translate-y-[600px] group-hover:rotate-[180deg] z-0 pointer-events-none" 
                 style={{ backgroundColor: `${themeColor}66` }}
               />
               <div 
-                className="absolute left-1/2 top-[120%] w-[1100px] h-[1100px] -translate-x-1/2 rounded-[43%] transition-all duration-[2200ms] ease-in-out group-hover:duration-[2500ms] group-hover:-translate-y-[650px] group-hover:rotate-[150deg] z-0 pointer-events-none" 
+                className="absolute left-1/2 top-[120%] w-[1100px] h-[1100px] -translate-x-1/2 rounded-[43%] transition duration-[2200ms] ease-in-out group-hover:duration-[2500ms] group-hover:-translate-y-[650px] group-hover:rotate-[150deg] z-0 pointer-events-none" 
                 style={{ backgroundColor: themeColor }}
               />
               <span 
@@ -2020,7 +2020,7 @@ export const ProductMain: React.FC<ProductMainProps> = ({
                 <label 
                   key={idx} 
                   onClick={() => setQty(tier.id)}
-                  className="flex justify-between items-center p-3.5 border rounded-none cursor-pointer transition-all duration-300 relative"
+                  className="flex justify-between items-center p-3.5 border rounded-none cursor-pointer transition duration-300 relative"
                   style={{
                     backgroundColor: isSelected ? `${themeColor}0f` : '#FAF5F0',
                     borderColor: isSelected ? themeColor : '#e6e6e6',
@@ -2029,7 +2029,7 @@ export const ProductMain: React.FC<ProductMainProps> = ({
                 >
                   <div className="flex items-center space-x-3">
                     <span 
-                      className="w-4 h-4 rounded-full border flex items-center justify-center transition-all"
+                      className="w-4 h-4 rounded-full border flex items-center justify-center transition"
                       style={{ borderColor: isSelected ? themeColor : '#d6d3d1' }}
                     >
                       {isSelected && <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: themeColor }} />}

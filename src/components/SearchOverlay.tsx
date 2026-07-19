@@ -74,7 +74,7 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="absolute inset-0 bg-stone-900/35 backdrop-blur-md cursor-pointer"
+            className="absolute inset-0 bg-stone-900/35 backdrop-blur-sm cursor-pointer"
           />
 
           {/* Search container */}
@@ -83,7 +83,7 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -50, opacity: 0 }}
             transition={{ type: 'spring', damping: 25, stiffness: 220 }}
-            className="relative w-full bg-white border-b border-stone-200/60 shadow-xl px-6 py-8 sm:px-12 md:py-12 flex flex-col items-center z-10"
+            className="relative w-full bg-white border-b border-stone-200/60 shadow-md px-6 py-8 sm:px-12 md:py-12 flex flex-col items-center z-10"
           >
             <div className="max-w-3xl w-full flex flex-col">
               {/* Close button inside top right container */}

@@ -1206,7 +1206,7 @@ export const ProductReviewsSection: React.FC<ProductReviewsSectionProps> = ({
                       onMouseEnter={() => setHoveredRatingFilter(rating)}
                       onMouseLeave={() => setHoveredRatingFilter(null)}
                       title={`Click to filter ${rating}-star reviews`}
-                      className={`flex items-center text-xs text-stone-700 font-sans gap-2 cursor-pointer p-1 rounded-sm transition-all duration-150 select-none ${
+                      className={`flex items-center text-xs text-stone-700 font-sans gap-2 cursor-pointer p-1 rounded-sm transition duration-150 select-none ${
                         isCurrentFilter
                           ? 'bg-stone-100 ring-1 ring-[#00C4BA]/30 font-semibold'
                           : isAnyFilterActive
@@ -1505,7 +1505,7 @@ export const ProductReviewsSection: React.FC<ProductReviewsSectionProps> = ({
                     return (
                       <div
                         key={review.id}
-                        className={`bg-white border border-stone-100 transition-all duration-300 hover:shadow-md flex ${
+                        className={`bg-white border border-stone-100 transition duration-300 hover:shadow-md flex ${
                           isMobile 
                             ? "flex-col p-4 text-left" 
                             : "flex-row items-stretch p-6 text-left"

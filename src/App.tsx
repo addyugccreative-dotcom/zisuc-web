@@ -558,7 +558,7 @@ export default function App() {
 
       {/* 1. SLIDING SIDE WINDOW DRAWER FOR THEME CUSTOMIZER OPTIONS */}
       <div 
-        className={`fixed top-0 bottom-0 left-0 w-96 max-w-[85vw] bg-neutral-900 z-[90] shadow-2xl transition-transform duration-300 ease-out transform ${
+        className={`fixed top-0 bottom-0 left-0 w-96 max-w-[85vw] bg-neutral-900 z-[90] shadow-lg transition-transform duration-300 ease-out transform ${
           isCustomizerOpen ? 'translate-x-0' : '-translate-x-full'
         } overflow-y-auto`}
       >
@@ -596,7 +596,7 @@ export default function App() {
 
         {/* PERSISTENT FLOATING SIDE BAR (LEFT SIDE) - Matches Image 4 and handles Scroll Hiding */}
         <div 
-          className={`fixed left-1.5 sm:left-4 bottom-36 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 z-40 flex flex-col items-center bg-white border border-stone-200/50 py-2 sm:py-4.5 px-0.5 sm:px-1 shadow-md rounded-[32px] gap-2.5 sm:gap-4.5 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] w-7 sm:w-9 ${
+          className={`fixed left-1.5 sm:left-4 bottom-36 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 z-40 flex flex-col items-center bg-white border border-stone-200/50 py-2 sm:py-4.5 px-0.5 sm:px-1 shadow-md rounded-[32px] gap-2.5 sm:gap-4.5 transition duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] w-7 sm:w-9 ${
             isNavVisible ? 'translate-x-0 opacity-100' : '-translate-x-32 opacity-0 pointer-events-none'
           }`}
         >
@@ -625,7 +625,7 @@ export default function App() {
           {/* Back to Top Capsule Button */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="bg-black hover:bg-stone-800 text-white flex flex-col items-center justify-center pt-1.5 pb-3 sm:pt-2 sm:pb-4.5 px-0 w-5 sm:w-7 rounded-full cursor-pointer transition-all duration-300 shadow-xs group border border-stone-800/10"
+            className="bg-black hover:bg-stone-800 text-white flex flex-col items-center justify-center pt-1.5 pb-3 sm:pt-2 sm:pb-4.5 px-0 w-5 sm:w-7 rounded-full cursor-pointer transition duration-300 shadow-xs group border border-stone-800/10"
           >
             <ChevronUp className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white mb-1 sm:mb-1.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
             <span 
@@ -679,6 +679,7 @@ export default function App() {
                 src="/zisuc hero section image laptop verison.png"
                 fallbackSrc={heroModelsBgImage}
                 alt="Peaches Models Background (Laptop)"
+                loading="eager"
                 className={`absolute inset-0 w-full h-full object-cover object-center select-none pointer-events-none z-0 hidden md:block hero-image-zoom ${isHeroMounted ? 'hero-entrance-active' : 'hero-entrance-start'}`}
               />
               {/* Mobile background */}
@@ -686,6 +687,7 @@ export default function App() {
                 src="/zisuc hero section image mobile version.png"
                 fallbackSrc={heroModelsBgImage}
                 alt="Peaches Models Background (Mobile)"
+                loading="eager"
                 className={`absolute inset-0 w-full h-full object-cover object-center select-none pointer-events-none z-0 block md:hidden hero-image-zoom ${isHeroMounted ? 'hero-entrance-active' : 'hero-entrance-start'}`}
               />
 
@@ -740,7 +742,7 @@ export default function App() {
                         const targetEl = document.getElementById('bestsellers-section');
                         targetEl?.scrollIntoView({ behavior: 'smooth' });
                       }}
-                      className="px-10 py-5 text-xs font-bold uppercase tracking-[0.2em] text-[#2D2926] bg-white hover:bg-[#FAF5F0] duration-300 active:scale-95 transition-all text-center rounded-sm shrink-0 cursor-pointer shadow-2xl font-sans"
+                      className="px-10 py-5 text-xs font-bold uppercase tracking-[0.2em] text-[#2D2926] bg-white hover:bg-[#FAF5F0] duration-300 active:scale-95 transition text-center rounded-sm shrink-0 cursor-pointer shadow-lg font-sans"
                       label="Shop now"
                     />
                   </PremiumSlideInText>
@@ -808,11 +810,11 @@ export default function App() {
                   {displayProducts.map((product, idx) => (
                     <motion.div 
                       key={product.id}
-                      initial={{ opacity: 0, scale: 0.98, filter: "blur(8px)" }}
+                      initial={{ opacity: 0, scale: 0.98, filter: "none" }}
                       whileInView={{ 
                         opacity: 1, 
                         scale: 1,
-                        filter: "blur(0px)",
+                        filter: "none",
                         transition: {
                           duration: 1.4,
                           ease: [0.16, 1, 0.3, 1],
@@ -842,14 +844,14 @@ export default function App() {
                   <div className="flex gap-2">
                     <button 
                       onClick={() => scrollCarousel('left')}
-                      className="w-10 h-10 rounded-full border border-stone-200 flex items-center justify-center text-stone-700 bg-white hover:bg-stone-50 transition-all active:scale-95 shadow-xs cursor-pointer"
+                      className="w-10 h-10 rounded-full border border-stone-200 flex items-center justify-center text-stone-700 bg-white hover:bg-stone-50 transition active:scale-95 shadow-xs cursor-pointer"
                       aria-label="Scroll left"
                     >
                       <ArrowLeft className="w-4 h-4" strokeWidth={1.5} />
                     </button>
                     <button 
                       onClick={() => scrollCarousel('right')}
-                      className="w-10 h-10 rounded-full border border-stone-200 flex items-center justify-center text-stone-700 bg-white hover:bg-stone-50 transition-all active:scale-95 shadow-xs cursor-pointer"
+                      className="w-10 h-10 rounded-full border border-stone-200 flex items-center justify-center text-stone-700 bg-white hover:bg-stone-50 transition active:scale-95 shadow-xs cursor-pointer"
                       aria-label="Scroll right"
                     >
                       <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
@@ -999,10 +1001,10 @@ export default function App() {
                 </div>
 
                 {/* BEFORE/AFTER Badge overlays */}
-                <div className="absolute bottom-5 left-5 bg-stone-900/80 backdrop-blur-md text-stone-100 text-[10px] sm:text-xs font-mono font-medium py-1.5 px-3.5 uppercase tracking-widest rounded-[4px] select-none pointer-events-none z-10">
+                <div className="absolute bottom-5 left-5 bg-stone-900/80 backdrop-blur-sm text-stone-100 text-[10px] sm:text-xs font-mono font-medium py-1.5 px-3.5 uppercase tracking-widest rounded-[4px] select-none pointer-events-none z-10">
                   BEFORE
                 </div>
-                <div className="absolute bottom-5 right-5 bg-stone-900/80 backdrop-blur-md text-stone-100 text-[10px] sm:text-xs font-mono font-medium py-1.5 px-3.5 uppercase tracking-widest rounded-[4px] select-none pointer-events-none z-10">
+                <div className="absolute bottom-5 right-5 bg-stone-900/80 backdrop-blur-sm text-stone-100 text-[10px] sm:text-xs font-mono font-medium py-1.5 px-3.5 uppercase tracking-widest rounded-[4px] select-none pointer-events-none z-10">
                   AFTER
                 </div>
 
@@ -1012,7 +1014,7 @@ export default function App() {
                   style={{ left: `${sliderVal}%` }}
                 >
                   {/* Perfect solid white circle knob with a dark slate pause icon symbol '||' inside */}
-                  <div className="absolute top-1/2 -translate-y-1/2 -left-6 w-12 h-12 rounded-full bg-white border border-stone-200/50 shadow-xl flex items-center justify-center pointer-events-none transition duration-150 transform hover:scale-110">
+                  <div className="absolute top-1/2 -translate-y-1/2 -left-6 w-12 h-12 rounded-full bg-white border border-stone-200/50 shadow-md flex items-center justify-center pointer-events-none transition duration-150 transform hover:scale-110">
                     <div className="flex gap-1.5 items-center justify-center">
                       <div className="w-[3px] h-[14px] bg-[#292524] rounded-full"></div>
                       <div className="w-[3px] h-[14px] bg-[#292524] rounded-full"></div>
@@ -1143,12 +1145,12 @@ export default function App() {
                                 handleAddToCart(matchedProd, 1, 0);
                               }
                             }}
-                            className="w-8 h-8 rounded-full flex items-center justify-center text-white hover:scale-105 active:scale-95 transition-all shadow-xs flex-shrink-0 cursor-pointer overflow-hidden relative group/btn"
+                            className="w-8 h-8 rounded-full flex items-center justify-center text-white hover:scale-105 active:scale-95 transition shadow-xs flex-shrink-0 cursor-pointer overflow-hidden relative group/btn"
                             style={{ backgroundColor: settings.colorButton, color: settings.colorButtonText }}
                             aria-label={`Buy ${matchedProd?.title}`}
                           >
-                            <ShoppingCart className="w-4 h-4 transition-all duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform translate-x-0 opacity-100 group-hover/btn:translate-x-10 group-hover/btn:opacity-0" />
-                            <ShoppingCart className="w-4 h-4 absolute transition-all duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform -translate-x-10 opacity-0 group-hover/btn:translate-x-0 group-hover/btn:opacity-100" />
+                            <ShoppingCart className="w-4 h-4 transition duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform translate-x-0 opacity-100 group-hover/btn:translate-x-10 group-hover/btn:opacity-0" />
+                            <ShoppingCart className="w-4 h-4 absolute transition duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform -translate-x-10 opacity-0 group-hover/btn:translate-x-0 group-hover/btn:opacity-100" />
                           </button>
                         </div>
                       </motion.div>
@@ -1170,7 +1172,7 @@ export default function App() {
                   {/* Close button */}
                   <button 
                     onClick={() => setActiveReel(null)}
-                    className="absolute top-4 right-4 sm:top-6 sm:right-6 w-10 h-10 rounded-full flex items-center justify-center bg-black/40 text-white backdrop-blur-md z-[170] hover:bg-black/60 transition shadow-lg cursor-pointer"
+                    className="absolute top-4 right-4 sm:top-6 sm:right-6 w-10 h-10 rounded-full flex items-center justify-center bg-black/40 text-white backdrop-blur-sm z-[170] hover:bg-black/60 transition shadow-lg cursor-pointer"
                   >
                     <X className="w-5 h-5" />
                   </button>
@@ -1189,7 +1191,7 @@ export default function App() {
                   <div className="absolute inset-0 flex flex-col justify-between pointer-events-none">
                     {/* Top: User info overlay */}
                     <div className="p-4 sm:p-6 mt-2 sm:mt-0 pointer-events-auto flex justify-start">
-                      <div className="inline-flex items-center gap-2 text-white bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full shadow-lg">
+                      <div className="inline-flex items-center gap-2 text-white bg-black/40 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-lg">
                         <Instagram className="w-4 h-4" />
                         <span className="text-sm font-semibold tracking-wide">{activeReel.reel.name}</span>
                       </div>
@@ -1197,7 +1199,7 @@ export default function App() {
                     
                     {/* Bottom: Product Strip */}
                     <div className="p-4 sm:p-6 pointer-events-auto sm:max-w-md sm:mx-auto sm:w-full">
-                      <div className="bg-white/95 backdrop-blur-md p-3 sm:p-4 rounded-xl shadow-2xl flex items-center gap-3 border border-white/20">
+                      <div className="bg-white/95 backdrop-blur-sm p-3 sm:p-4 rounded-xl shadow-lg flex items-center gap-3 border border-white/20">
                         <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-md bg-stone-50 border border-stone-100 flex-shrink-0 p-1 flex items-center justify-center">
                           <img decoding="async" loading="lazy" 
                             src={activeReel.product.images[0]} 
@@ -1274,7 +1276,7 @@ export default function App() {
                       <LuxuryButton
                         type="button"
                         onClick={() => handleNavigate('product', 'overachiever-balm-cleanser')}
-                        className="px-8 py-3.5 bg-black hover:bg-stone-900 text-white font-sans text-xs uppercase tracking-[0.2em] font-medium transition-all shadow-xs shrink-0 cursor-pointer rounded-none border-none"
+                        className="px-8 py-3.5 bg-black hover:bg-stone-900 text-white font-sans text-xs uppercase tracking-[0.2em] font-medium transition shadow-xs shrink-0 cursor-pointer rounded-none border-none"
                         label="Shop Flashsale"
                       />
                     </div>
@@ -1579,7 +1581,7 @@ export default function App() {
                   <button
                     key={idx}
                     onClick={() => setCurrentFeatureIdx(idx)}
-                    className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
+                    className={`w-1.5 h-1.5 rounded-full transition duration-300 ${
                       idx === currentFeatureIdx ? 'bg-white w-3' : 'bg-white/40'
                     }`}
                     aria-label={`Go to feature ${idx + 1}`}
@@ -1742,7 +1744,7 @@ export default function App() {
                         className="fixed inset-0 z-30 cursor-default" 
                         onClick={() => setFooterCurrencyMenuOpen(false)} 
                       />
-                      <div className="absolute right-0 bottom-full mb-3.5 w-40 bg-white border border-stone-200/80 shadow-2xl rounded-xl py-1.5 z-40 max-h-60 overflow-y-auto">
+                      <div className="absolute right-0 bottom-full mb-3.5 w-40 bg-white border border-stone-200/80 shadow-lg rounded-xl py-1.5 z-40 max-h-60 overflow-y-auto">
                         <p className="text-[9px] font-sans font-bold text-stone-400/90 px-3 py-1 uppercase tracking-wider border-b border-stone-100 mb-1">Select Currency</p>
                         {SUPPORTED_CURRENCIES.map((cur) => (
                           <button

@@ -161,14 +161,14 @@ export const BundleSection: React.FC<BundleSectionProps> = ({
               <img
                 src={getProductImage(prod1, colorIdx1)}
                 alt={prod1.title}
-                className="max-h-[55px] xs:max-h-[80px] sm:max-h-[120px] lg:max-h-[250px] h-[85%] w-auto object-contain transition-all duration-700 ease-out group-hover:opacity-0 group-hover:scale-110"
+                className="max-h-[55px] xs:max-h-[80px] sm:max-h-[120px] lg:max-h-[250px] h-[85%] w-auto object-contain transition duration-700 ease-out group-hover:opacity-0 group-hover:scale-110"
                 referrerPolicy="no-referrer"
               />
               {/* Secondary Image */}
               <img
                 src={getSecondaryProductImage(prod1, colorIdx1)}
                 alt={`${prod1.title} Alternate`}
-                className="absolute inset-0 m-auto max-h-[55px] xs:max-h-[80px] sm:max-h-[120px] lg:max-h-[250px] h-[85%] w-auto object-contain transition-all duration-700 ease-out opacity-0 scale-[1.02] group-hover:opacity-100 group-hover:scale-110"
+                className="absolute inset-0 m-auto max-h-[55px] xs:max-h-[80px] sm:max-h-[120px] lg:max-h-[250px] h-[85%] w-auto object-contain transition duration-700 ease-out opacity-0 scale-[1.02] group-hover:opacity-100 group-hover:scale-110"
                 referrerPolicy="no-referrer"
               />
 
@@ -181,11 +181,11 @@ export const BundleSection: React.FC<BundleSectionProps> = ({
                     onClick={(e) => { e.stopPropagation(); setSelectedQuickView(prod1); }}
                     onMouseEnter={() => setHoveredAction1('view')}
                     onMouseLeave={() => setHoveredAction1(null)}
-                    className="w-11 h-11 rounded-full bg-[#A5F3E5] hover:bg-[#8CE5D6] text-stone-900 border border-white/60 shadow-lg flex items-center justify-center cursor-pointer group/btn transition-all duration-300 relative overflow-hidden"
+                    className="w-11 h-11 rounded-full bg-[#A5F3E5] hover:bg-[#8CE5D6] text-stone-900 border border-white/60 shadow-lg flex items-center justify-center cursor-pointer group/btn transition duration-300 relative overflow-hidden"
                     aria-label="Quick View Product"
                   >
-                    <Eye className="w-[18px] h-[18px] transition-all duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform translate-x-0 opacity-100 group-hover/btn:translate-x-10 group-hover/btn:opacity-0" />
-                    <Eye className="w-[18px] h-[18px] absolute transition-all duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform -translate-x-10 opacity-0 group-hover/btn:translate-x-0 group-hover/btn:opacity-100" />
+                    <Eye className="w-[18px] h-[18px] transition duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform translate-x-0 opacity-100 group-hover/btn:translate-x-10 group-hover/btn:opacity-0" />
+                    <Eye className="w-[18px] h-[18px] absolute transition duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform -translate-x-10 opacity-0 group-hover/btn:translate-x-0 group-hover/btn:opacity-100" />
                   </button>
 
                   <AnimatePresence>
@@ -195,7 +195,7 @@ export const BundleSection: React.FC<BundleSectionProps> = ({
                         animate={{ opacity: 1, x: 0, scale: 1 }}
                         exit={{ opacity: 0, x: -12, scale: 0.95 }}
                         transition={{ type: "spring", stiffness: 380, damping: 26 }}
-                        className="absolute right-14 top-1/2 -translate-y-1/2 bg-black text-white text-[9px] font-mono font-bold tracking-widest uppercase px-3 py-1.5 rounded-sm shadow-xl whitespace-nowrap z-30"
+                        className="absolute right-14 top-1/2 -translate-y-1/2 bg-black text-white text-[9px] font-mono font-bold tracking-widest uppercase px-3 py-1.5 rounded-sm shadow-md whitespace-nowrap z-30"
                       >
                         QUICK VIEW
                         <div className="absolute top-1/2 -translate-y-1/2 -right-1 w-1.5 h-1.5 bg-black rotate-45" />
@@ -216,11 +216,11 @@ export const BundleSection: React.FC<BundleSectionProps> = ({
                     }}
                     onMouseEnter={() => setHoveredAction1('cart')}
                     onMouseLeave={() => setHoveredAction1(null)}
-                    className="w-11 h-11 rounded-full bg-[#A5F3E5] hover:bg-[#8CE5D6] text-stone-900 border border-white/60 shadow-lg flex items-center justify-center cursor-pointer group/btn transition-all duration-300 relative overflow-hidden"
+                    className="w-11 h-11 rounded-full bg-[#A5F3E5] hover:bg-[#8CE5D6] text-stone-900 border border-white/60 shadow-lg flex items-center justify-center cursor-pointer group/btn transition duration-300 relative overflow-hidden"
                     aria-label="Add product to cart"
                   >
-                    <ShoppingCart className="w-[18px] h-[18px] transition-all duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform translate-x-0 opacity-100 group-hover/btn:translate-x-10 group-hover/btn:opacity-0" />
-                    <ShoppingCart className="w-[18px] h-[18px] absolute transition-all duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform -translate-x-10 opacity-0 group-hover/btn:translate-x-0 group-hover/btn:opacity-100" />
+                    <ShoppingCart className="w-[18px] h-[18px] transition duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform translate-x-0 opacity-100 group-hover/btn:translate-x-10 group-hover/btn:opacity-0" />
+                    <ShoppingCart className="w-[18px] h-[18px] absolute transition duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform -translate-x-10 opacity-0 group-hover/btn:translate-x-0 group-hover/btn:opacity-100" />
                   </button>
 
                   <AnimatePresence>
@@ -230,7 +230,7 @@ export const BundleSection: React.FC<BundleSectionProps> = ({
                         animate={{ opacity: 1, x: 0, scale: 1 }}
                         exit={{ opacity: 0, x: -12, scale: 0.95 }}
                         transition={{ type: "spring", stiffness: 380, damping: 26 }}
-                        className="absolute right-14 top-1/2 -translate-y-1/2 bg-black text-white text-[9px] font-mono font-bold tracking-widest uppercase px-3 py-1.5 rounded-sm shadow-xl whitespace-nowrap z-30"
+                        className="absolute right-14 top-1/2 -translate-y-1/2 bg-black text-white text-[9px] font-mono font-bold tracking-widest uppercase px-3 py-1.5 rounded-sm shadow-md whitespace-nowrap z-30"
                       >
                         ADD TO CART
                         <div className="absolute top-1/2 -translate-y-1/2 -right-1 w-1.5 h-1.5 bg-black rotate-45" />
@@ -289,14 +289,14 @@ export const BundleSection: React.FC<BundleSectionProps> = ({
               <img
                 src={getProductImage(prod2, colorIdx2)}
                 alt={prod2.title}
-                className="max-h-[55px] xs:max-h-[80px] sm:max-h-[120px] lg:max-h-[250px] h-[85%] w-auto object-contain transition-all duration-700 ease-out group-hover:opacity-0 group-hover:scale-110"
+                className="max-h-[55px] xs:max-h-[80px] sm:max-h-[120px] lg:max-h-[250px] h-[85%] w-auto object-contain transition duration-700 ease-out group-hover:opacity-0 group-hover:scale-110"
                 referrerPolicy="no-referrer"
               />
               {/* Secondary Image */}
               <img
                 src={getSecondaryProductImage(prod2, colorIdx2)}
                 alt={`${prod2.title} Alternate`}
-                className="absolute inset-0 m-auto max-h-[55px] xs:max-h-[80px] sm:max-h-[120px] lg:max-h-[250px] h-[85%] w-auto object-contain transition-all duration-700 ease-out opacity-0 scale-[1.02] group-hover:opacity-100 group-hover:scale-110"
+                className="absolute inset-0 m-auto max-h-[55px] xs:max-h-[80px] sm:max-h-[120px] lg:max-h-[250px] h-[85%] w-auto object-contain transition duration-700 ease-out opacity-0 scale-[1.02] group-hover:opacity-100 group-hover:scale-110"
                 referrerPolicy="no-referrer"
               />
 
@@ -309,11 +309,11 @@ export const BundleSection: React.FC<BundleSectionProps> = ({
                     onClick={(e) => { e.stopPropagation(); setSelectedQuickView(prod2); }}
                     onMouseEnter={() => setHoveredAction2('view')}
                     onMouseLeave={() => setHoveredAction2(null)}
-                    className="w-11 h-11 rounded-full bg-[#A5F3E5] hover:bg-[#8CE5D6] text-stone-900 border border-white/60 shadow-lg flex items-center justify-center cursor-pointer group/btn transition-all duration-300 relative overflow-hidden"
+                    className="w-11 h-11 rounded-full bg-[#A5F3E5] hover:bg-[#8CE5D6] text-stone-900 border border-white/60 shadow-lg flex items-center justify-center cursor-pointer group/btn transition duration-300 relative overflow-hidden"
                     aria-label="Quick View Product"
                   >
-                    <Eye className="w-[18px] h-[18px] transition-all duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform translate-x-0 opacity-100 group-hover/btn:translate-x-10 group-hover/btn:opacity-0" />
-                    <Eye className="w-[18px] h-[18px] absolute transition-all duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform -translate-x-10 opacity-0 group-hover/btn:translate-x-0 group-hover/btn:opacity-100" />
+                    <Eye className="w-[18px] h-[18px] transition duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform translate-x-0 opacity-100 group-hover/btn:translate-x-10 group-hover/btn:opacity-0" />
+                    <Eye className="w-[18px] h-[18px] absolute transition duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform -translate-x-10 opacity-0 group-hover/btn:translate-x-0 group-hover/btn:opacity-100" />
                   </button>
 
                   <AnimatePresence>
@@ -323,7 +323,7 @@ export const BundleSection: React.FC<BundleSectionProps> = ({
                         animate={{ opacity: 1, x: 0, scale: 1 }}
                         exit={{ opacity: 0, x: -12, scale: 0.95 }}
                         transition={{ type: "spring", stiffness: 380, damping: 26 }}
-                        className="absolute right-14 top-1/2 -translate-y-1/2 bg-black text-white text-[9px] font-mono font-bold tracking-widest uppercase px-3 py-1.5 rounded-sm shadow-xl whitespace-nowrap z-30"
+                        className="absolute right-14 top-1/2 -translate-y-1/2 bg-black text-white text-[9px] font-mono font-bold tracking-widest uppercase px-3 py-1.5 rounded-sm shadow-md whitespace-nowrap z-30"
                       >
                         QUICK VIEW
                         <div className="absolute top-1/2 -translate-y-1/2 -right-1 w-1.5 h-1.5 bg-black rotate-45" />
@@ -342,11 +342,11 @@ export const BundleSection: React.FC<BundleSectionProps> = ({
                     }}
                     onMouseEnter={() => setHoveredAction2('cart')}
                     onMouseLeave={() => setHoveredAction2(null)}
-                    className="w-11 h-11 rounded-full bg-[#A5F3E5] hover:bg-[#8CE5D6] text-stone-900 border border-white/60 shadow-lg flex items-center justify-center cursor-pointer group/btn transition-all duration-300 relative overflow-hidden"
+                    className="w-11 h-11 rounded-full bg-[#A5F3E5] hover:bg-[#8CE5D6] text-stone-900 border border-white/60 shadow-lg flex items-center justify-center cursor-pointer group/btn transition duration-300 relative overflow-hidden"
                     aria-label="Add product to cart"
                   >
-                    <ShoppingCart className="w-[18px] h-[18px] transition-all duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform translate-x-0 opacity-100 group-hover/btn:translate-x-10 group-hover/btn:opacity-0" />
-                    <ShoppingCart className="w-[18px] h-[18px] absolute transition-all duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform -translate-x-10 opacity-0 group-hover/btn:translate-x-0 group-hover/btn:opacity-100" />
+                    <ShoppingCart className="w-[18px] h-[18px] transition duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform translate-x-0 opacity-100 group-hover/btn:translate-x-10 group-hover/btn:opacity-0" />
+                    <ShoppingCart className="w-[18px] h-[18px] absolute transition duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform -translate-x-10 opacity-0 group-hover/btn:translate-x-0 group-hover/btn:opacity-100" />
                   </button>
 
                   <AnimatePresence>
@@ -356,7 +356,7 @@ export const BundleSection: React.FC<BundleSectionProps> = ({
                         animate={{ opacity: 1, x: 0, scale: 1 }}
                         exit={{ opacity: 0, x: -12, scale: 0.95 }}
                         transition={{ type: "spring", stiffness: 380, damping: 26 }}
-                        className="absolute right-14 top-1/2 -translate-y-1/2 bg-black text-white text-[9px] font-mono font-bold tracking-widest uppercase px-3 py-1.5 rounded-sm shadow-xl whitespace-nowrap z-30"
+                        className="absolute right-14 top-1/2 -translate-y-1/2 bg-black text-white text-[9px] font-mono font-bold tracking-widest uppercase px-3 py-1.5 rounded-sm shadow-md whitespace-nowrap z-30"
                       >
                         ADD TO CART
                         <div className="absolute top-1/2 -translate-y-1/2 -right-1 w-1.5 h-1.5 bg-black rotate-45" />
@@ -415,14 +415,14 @@ export const BundleSection: React.FC<BundleSectionProps> = ({
               <img
                 src={getProductImage(prod3, colorIdx3)}
                 alt={prod3.title}
-                className="max-h-[55px] xs:max-h-[80px] sm:max-h-[120px] lg:max-h-[250px] h-[85%] w-auto object-contain transition-all duration-700 ease-out group-hover:opacity-0 group-hover:scale-110"
+                className="max-h-[55px] xs:max-h-[80px] sm:max-h-[120px] lg:max-h-[250px] h-[85%] w-auto object-contain transition duration-700 ease-out group-hover:opacity-0 group-hover:scale-110"
                 referrerPolicy="no-referrer"
               />
               {/* Secondary Image */}
               <img
                 src={getSecondaryProductImage(prod3, colorIdx3)}
                 alt={`${prod3.title} Alternate`}
-                className="absolute inset-0 m-auto max-h-[55px] xs:max-h-[80px] sm:max-h-[120px] lg:max-h-[250px] h-[85%] w-auto object-contain transition-all duration-700 ease-out opacity-0 scale-[1.02] group-hover:opacity-100 group-hover:scale-110"
+                className="absolute inset-0 m-auto max-h-[55px] xs:max-h-[80px] sm:max-h-[120px] lg:max-h-[250px] h-[85%] w-auto object-contain transition duration-700 ease-out opacity-0 scale-[1.02] group-hover:opacity-100 group-hover:scale-110"
                 referrerPolicy="no-referrer"
               />
 
@@ -435,11 +435,11 @@ export const BundleSection: React.FC<BundleSectionProps> = ({
                     onClick={(e) => { e.stopPropagation(); setSelectedQuickView(prod3); }}
                     onMouseEnter={() => setHoveredAction3('view')}
                     onMouseLeave={() => setHoveredAction3(null)}
-                    className="w-11 h-11 rounded-full bg-[#A5F3E5] hover:bg-[#8CE5D6] text-stone-900 border border-white/60 shadow-lg flex items-center justify-center cursor-pointer group/btn transition-all duration-300 relative overflow-hidden"
+                    className="w-11 h-11 rounded-full bg-[#A5F3E5] hover:bg-[#8CE5D6] text-stone-900 border border-white/60 shadow-lg flex items-center justify-center cursor-pointer group/btn transition duration-300 relative overflow-hidden"
                     aria-label="Quick View Product"
                   >
-                    <Eye className="w-[18px] h-[18px] transition-all duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform translate-x-0 opacity-100 group-hover/btn:translate-x-10 group-hover/btn:opacity-0" />
-                    <Eye className="w-[18px] h-[18px] absolute transition-all duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform -translate-x-10 opacity-0 group-hover/btn:translate-x-0 group-hover/btn:opacity-100" />
+                    <Eye className="w-[18px] h-[18px] transition duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform translate-x-0 opacity-100 group-hover/btn:translate-x-10 group-hover/btn:opacity-0" />
+                    <Eye className="w-[18px] h-[18px] absolute transition duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform -translate-x-10 opacity-0 group-hover/btn:translate-x-0 group-hover/btn:opacity-100" />
                   </button>
 
                   <AnimatePresence>
@@ -449,7 +449,7 @@ export const BundleSection: React.FC<BundleSectionProps> = ({
                         animate={{ opacity: 1, x: 0, scale: 1 }}
                         exit={{ opacity: 0, x: -12, scale: 0.95 }}
                         transition={{ type: "spring", stiffness: 380, damping: 26 }}
-                        className="absolute right-14 top-1/2 -translate-y-1/2 bg-black text-white text-[9px] font-mono font-bold tracking-widest uppercase px-3 py-1.5 rounded-sm shadow-xl whitespace-nowrap z-30"
+                        className="absolute right-14 top-1/2 -translate-y-1/2 bg-black text-white text-[9px] font-mono font-bold tracking-widest uppercase px-3 py-1.5 rounded-sm shadow-md whitespace-nowrap z-30"
                       >
                         QUICK VIEW
                         <div className="absolute top-1/2 -translate-y-1/2 -right-1 w-1.5 h-1.5 bg-black rotate-45" />
@@ -468,11 +468,11 @@ export const BundleSection: React.FC<BundleSectionProps> = ({
                     }}
                     onMouseEnter={() => setHoveredAction3('cart')}
                     onMouseLeave={() => setHoveredAction3(null)}
-                    className="w-11 h-11 rounded-full bg-[#A5F3E5] hover:bg-[#8CE5D6] text-stone-900 border border-white/60 shadow-lg flex items-center justify-center cursor-pointer group/btn transition-all duration-300 relative overflow-hidden"
+                    className="w-11 h-11 rounded-full bg-[#A5F3E5] hover:bg-[#8CE5D6] text-stone-900 border border-white/60 shadow-lg flex items-center justify-center cursor-pointer group/btn transition duration-300 relative overflow-hidden"
                     aria-label="Add product to cart"
                   >
-                    <ShoppingCart className="w-[18px] h-[18px] transition-all duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform translate-x-0 opacity-100 group-hover/btn:translate-x-10 group-hover/btn:opacity-0" />
-                    <ShoppingCart className="w-[18px] h-[18px] absolute transition-all duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform -translate-x-10 opacity-0 group-hover/btn:translate-x-0 group-hover/btn:opacity-100" />
+                    <ShoppingCart className="w-[18px] h-[18px] transition duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform translate-x-0 opacity-100 group-hover/btn:translate-x-10 group-hover/btn:opacity-0" />
+                    <ShoppingCart className="w-[18px] h-[18px] absolute transition duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform -translate-x-10 opacity-0 group-hover/btn:translate-x-0 group-hover/btn:opacity-100" />
                   </button>
 
                   <AnimatePresence>
@@ -482,7 +482,7 @@ export const BundleSection: React.FC<BundleSectionProps> = ({
                         animate={{ opacity: 1, x: 0, scale: 1 }}
                         exit={{ opacity: 0, x: -12, scale: 0.95 }}
                         transition={{ type: "spring", stiffness: 380, damping: 26 }}
-                        className="absolute right-14 top-1/2 -translate-y-1/2 bg-black text-white text-[9px] font-mono font-bold tracking-widest uppercase px-3 py-1.5 rounded-sm shadow-xl whitespace-nowrap z-30"
+                        className="absolute right-14 top-1/2 -translate-y-1/2 bg-black text-white text-[9px] font-mono font-bold tracking-widest uppercase px-3 py-1.5 rounded-sm shadow-md whitespace-nowrap z-30"
                       >
                         ADD TO CART
                         <div className="absolute top-1/2 -translate-y-1/2 -right-1 w-1.5 h-1.5 bg-black rotate-45" />
@@ -547,7 +547,7 @@ export const BundleSection: React.FC<BundleSectionProps> = ({
             ease: "easeInOut",
             times: [0, 0.3, 0.6, 1]
           }}
-          className="w-full py-5 xs:py-6 text-[10px] xs:text-xs sm:text-sm font-extrabold tracking-[0.05em] xs:tracking-[0.15em] sm:tracking-[0.2em] uppercase cursor-pointer flex items-center justify-center gap-2 xs:gap-3 transition-all rounded-[4px] focus:outline-hidden text-white select-none relative overflow-hidden active:scale-95"
+          className="w-full py-5 xs:py-6 text-[10px] xs:text-xs sm:text-sm font-extrabold tracking-[0.05em] xs:tracking-[0.15em] sm:tracking-[0.2em] uppercase cursor-pointer flex items-center justify-center gap-2 xs:gap-3 transition rounded-[4px] focus:outline-hidden text-white select-none relative overflow-hidden active:scale-95"
           style={{ backgroundColor: '#00C4BA' }}
         >
           {/* White shine light pass animation */}
@@ -609,7 +609,7 @@ export const BundleSection: React.FC<BundleSectionProps> = ({
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.3 }}
-              className="bg-white max-w-lg w-full p-8 shadow-2xl relative border border-stone-150 rounded-none text-left"
+              className="bg-white max-w-lg w-full p-8 shadow-lg relative border border-stone-150 rounded-none text-left"
             >
               <button
                 onClick={() => setSelectedQuickView(null)}

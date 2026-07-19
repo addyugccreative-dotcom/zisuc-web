@@ -77,7 +77,7 @@ export const SafeImage: React.FC<SafeImageProps> = ({ src, fallbackSrc, alt, cla
         <div 
           className="absolute inset-0 bg-stone-100 dark:bg-stone-900 animate-pulse"
           style={{ 
-            filter: 'blur(10px)',
+            filter: 'blur(4px)',
             transform: 'scale(1.05) translateZ(0)',
             willChange: 'opacity',
             transition: 'opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1)'
@@ -93,8 +93,8 @@ export const SafeImage: React.FC<SafeImageProps> = ({ src, fallbackSrc, alt, cla
         referrerPolicy="no-referrer"
         decoding="async"
         loading={props.loading || "lazy"}
-        className={`w-full h-full ${objectFitClasses} transition-all duration-[400ms] cubic-bezier(0.16, 1, 0.3, 1) transform-gpu ${
-          isLoaded ? 'opacity-100 scale-100 blur-0' : 'opacity-0 scale-[1.02] blur-[4px]'
+        className={`w-full h-full ${objectFitClasses} transition duration-[400ms] cubic-bezier(0.16, 1, 0.3, 1) transform-gpu ${
+          isLoaded ? 'opacity-100 scale-100 ' : 'opacity-0 scale-[1.02] '
         }`}
         style={{
           willChange: 'transform, opacity, filter',

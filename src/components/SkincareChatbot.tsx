@@ -470,7 +470,7 @@ export const SkincareChatbot: React.FC<SkincareChatbotProps> = ({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 30, scale: 0.95 }}
             transition={{ type: 'spring', damping: 25, stiffness: 220 }}
-            className="fixed bottom-16 sm:bottom-20 left-3 sm:left-5 w-[92vw] sm:w-[380px] h-[520px] bg-[#FAF5F0] rounded-2xl shadow-2xl z-50 border border-stone-200/80 flex flex-col overflow-hidden"
+            className="fixed bottom-16 sm:bottom-20 left-3 sm:left-5 w-[92vw] sm:w-[380px] h-[520px] bg-[#FAF5F0] rounded-2xl shadow-lg z-50 border border-stone-200/80 flex flex-col overflow-hidden"
           >
             {/* Header */}
             <div 
@@ -542,7 +542,7 @@ export const SkincareChatbot: React.FC<SkincareChatbotProps> = ({
                               return (
                                 <div 
                                   key={prod.id}
-                                  className="bg-white border border-stone-200/60 rounded-xl p-2.5 flex gap-3 shadow-xs hover:shadow-sm transition-all duration-200"
+                                  className="bg-white border border-stone-200/60 rounded-xl p-2.5 flex gap-3 shadow-xs hover:shadow-sm transition duration-200"
                                 >
                                   {/* Product Image */}
                                   <div className="w-16 h-16 rounded-lg overflow-hidden bg-stone-50 border border-stone-100 flex items-center justify-center shrink-0">
@@ -577,7 +577,7 @@ export const SkincareChatbot: React.FC<SkincareChatbotProps> = ({
                                         }
                                       }}
                                       disabled={isAdded}
-                                      className="mt-1.5 self-start px-3 py-1 text-[10px] font-bold tracking-wide rounded-full flex items-center gap-1.5 cursor-pointer select-none transition-all duration-200 focus:outline-none"
+                                      className="mt-1.5 self-start px-3 py-1 text-[10px] font-bold tracking-wide rounded-full flex items-center gap-1.5 cursor-pointer select-none transition duration-200 focus:outline-none"
                                       style={{
                                         backgroundColor: isAdded ? '#10B981' : themeColor,
                                         color: '#ffffff'

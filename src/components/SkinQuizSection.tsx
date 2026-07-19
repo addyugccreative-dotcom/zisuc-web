@@ -109,7 +109,7 @@ export const SkinQuizSection: React.FC<SkinQuizSectionProps> = ({
             onClick={startQuiz}
             whileHover={{ scale: 1.05, y: -4 }}
             whileTap={{ scale: 0.98 }}
-            className="mt-10 px-9 py-4 bg-white text-stone-900 font-sans font-semibold text-xs tracking-[0.25em] uppercase rounded-none shadow-md hover:shadow-xl cursor-pointer select-none relative overflow-hidden group"
+            className="mt-10 px-9 py-4 bg-white text-stone-900 font-sans font-semibold text-xs tracking-[0.25em] uppercase rounded-none shadow-md hover:shadow-md cursor-pointer select-none relative overflow-hidden group"
           >
             {/* Background luxury transition overlay */}
             <span className="absolute inset-0 bg-stone-950 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] z-0" />
@@ -117,7 +117,7 @@ export const SkinQuizSection: React.FC<SkinQuizSectionProps> = ({
             {/* Button label & sliding icon */}
             <span className="relative z-10 group-hover:text-white transition-colors duration-300 flex items-center justify-center gap-2">
               Start quiz
-              <ArrowRight className="w-3.5 h-3.5 transform -translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300" />
+              <ArrowRight className="w-3.5 h-3.5 transform -translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition duration-300" />
             </span>
           </motion.button>
         </div>
@@ -132,7 +132,7 @@ export const SkinQuizSection: React.FC<SkinQuizSectionProps> = ({
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.3 }}
-              className="bg-white max-w-lg w-full p-8 md:p-10 shadow-2xl relative border border-stone-100 rounded-none text-left"
+              className="bg-white max-w-lg w-full p-8 md:p-10 shadow-lg relative border border-stone-100 rounded-none text-left"
             >
               {/* Close Button */}
               <button
@@ -151,7 +151,7 @@ export const SkinQuizSection: React.FC<SkinQuizSectionProps> = ({
                   </div>
                   <div className="w-full h-1 bg-stone-100 rounded-full overflow-hidden">
                     <div 
-                      className="h-full bg-stone-900 transition-all duration-300"
+                      className="h-full bg-stone-900 transition duration-300"
                       style={{ width: `${(currentStep / 3) * 100}%` }}
                     />
                   </div>
@@ -170,7 +170,7 @@ export const SkinQuizSection: React.FC<SkinQuizSectionProps> = ({
                         key={option}
                         type="button"
                         onClick={() => handleNextStep(option)}
-                        className="w-full text-left py-4 px-5 border border-stone-200 hover:border-stone-850 hover:bg-stone-50 transition-all duration-200 font-sans text-xs font-semibold uppercase tracking-wider text-stone-800 cursor-pointer"
+                        className="w-full text-left py-4 px-5 border border-stone-200 hover:border-stone-850 hover:bg-stone-50 transition duration-200 font-sans text-xs font-semibold uppercase tracking-wider text-stone-800 cursor-pointer"
                       >
                         {option}
                       </button>
@@ -191,7 +191,7 @@ export const SkinQuizSection: React.FC<SkinQuizSectionProps> = ({
                         key={option}
                         type="button"
                         onClick={() => handleNextStep(option)}
-                        className="w-full text-left py-4 px-5 border border-stone-200 hover:border-stone-850 hover:bg-stone-50 transition-all duration-200 font-sans text-xs font-semibold uppercase tracking-wider text-stone-800 cursor-pointer"
+                        className="w-full text-left py-4 px-5 border border-stone-200 hover:border-stone-850 hover:bg-stone-50 transition duration-200 font-sans text-xs font-semibold uppercase tracking-wider text-stone-800 cursor-pointer"
                       >
                         {option}
                       </button>
@@ -212,7 +212,7 @@ export const SkinQuizSection: React.FC<SkinQuizSectionProps> = ({
                         key={option}
                         type="button"
                         onClick={() => handleNextStep(option)}
-                        className="w-full text-left py-4 px-5 border border-stone-200 hover:border-stone-850 hover:bg-stone-50 transition-all duration-200 font-sans text-xs font-semibold uppercase tracking-wider text-stone-800 cursor-pointer"
+                        className="w-full text-left py-4 px-5 border border-stone-200 hover:border-stone-850 hover:bg-stone-50 transition duration-200 font-sans text-xs font-semibold uppercase tracking-wider text-stone-800 cursor-pointer"
                       >
                         {option}
                       </button>

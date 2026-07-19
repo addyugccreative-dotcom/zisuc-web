@@ -104,7 +104,7 @@ export const LuxuryCategoryShowcase: React.FC<{
                   key={cat.id}
                   onMouseEnter={() => handleHoverSection(idx)}
                   onClick={() => setActiveIndex(idx)}
-                  className="group py-3 sm:py-5 border-b border-stone-900/10 cursor-pointer flex items-baseline justify-between transition-all duration-300 relative"
+                  className="group py-3 sm:py-5 border-b border-stone-900/10 cursor-pointer flex items-baseline justify-between transition duration-300 relative"
                 >
                   <div className="flex items-baseline gap-4 sm:gap-6">
                     {/* Numeric prefix */}
@@ -114,7 +114,7 @@ export const LuxuryCategoryShowcase: React.FC<{
                     
                     {/* Large Luxurious Category Name */}
                     <span 
-                      className={`font-heading italic text-xl sm:text-3xl lg:text-4xl transition-all duration-500 ease-out select-none relative ${
+                      className={`font-heading italic text-xl sm:text-3xl lg:text-4xl transition duration-500 ease-out select-none relative ${
                         isActive 
                           ? 'text-stone-900 font-bold scale-[1.01] translate-x-1' 
                           : 'text-stone-900/45 group-hover:text-stone-900/75 group-hover:translate-x-0.5'
@@ -124,7 +124,7 @@ export const LuxuryCategoryShowcase: React.FC<{
                       
                       {/* Premium elegant bottom line sliding-expand interaction */}
                       <span 
-                        className={`absolute left-0 -bottom-1 h-[1.5px] bg-stone-900 transition-all duration-500 ease-out ${
+                        className={`absolute left-0 -bottom-1 h-[1.5px] bg-stone-900 transition duration-500 ease-out ${
                           isActive ? 'w-full' : 'w-0 group-hover:w-1/3'
                         }`}
                       />
@@ -153,7 +153,7 @@ export const LuxuryCategoryShowcase: React.FC<{
         </div>
 
         {/* RIGHT COLUMN: Feature Image with elegant premium WebGL horizontal liquid displacement shader */}
-        <div className="lg:col-span-7 relative h-[280px] sm:h-[480px] lg:h-[560px] w-full rounded-2xl overflow-hidden shadow-2xl flex items-end border border-stone-200/20 bg-stone-100 group">
+        <div className="lg:col-span-7 relative h-[280px] sm:h-[480px] lg:h-[560px] w-full rounded-2xl overflow-hidden shadow-lg flex items-end border border-stone-200/20 bg-stone-100 group">
           
           <LuxuryWebGLShowcase activeIndex={activeIndex} categories={CATEGORIES} />
 

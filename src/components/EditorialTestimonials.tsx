@@ -299,7 +299,7 @@ export const EditorialTestimonials: React.FC<EditorialTestimonialsProps> = ({
                           e.stopPropagation();
                           handleQuickAdd(productId);
                         }}
-                        className={`w-11 h-11 rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer shadow-xs shrink-0 ${
+                        className={`w-11 h-11 rounded-full flex items-center justify-center transition duration-300 cursor-pointer shadow-xs shrink-0 ${
                           isQuickAdded 
                             ? 'bg-[#10B981] text-white hover:bg-[#069668]' 
                             : 'bg-[#00C4BA] text-white hover:bg-[#00B0A7]'

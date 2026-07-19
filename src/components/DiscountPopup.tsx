@@ -114,7 +114,7 @@ export const DiscountPopup: React.FC<DiscountPopupProps> = ({
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: '120%', opacity: 0 }}
               transition={{ type: 'spring', damping: 26, stiffness: 180 }}
-              className="relative w-full max-w-[760px] h-auto md:h-[460px] bg-white rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row z-10"
+              className="relative w-full max-w-[760px] h-auto md:h-[460px] bg-white rounded-3xl overflow-hidden shadow-lg flex flex-col md:flex-row z-10"
             >
               {/* Left Column: Visual Artwork (Desktop and Mobile custom images) */}
               <div className="w-full md:w-1/2 h-44 md:h-full bg-pink-50 relative shrink-0">
@@ -180,7 +180,7 @@ export const DiscountPopup: React.FC<DiscountPopupProps> = ({
 
                       <button
                         type="submit"
-                        className="w-full py-3 px-6 rounded-full font-subheading font-bold text-xs uppercase tracking-wider transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-sm cursor-pointer"
+                        className="w-full py-3 px-6 rounded-full font-subheading font-bold text-xs uppercase tracking-wider transition duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-sm cursor-pointer"
                         style={{
                           backgroundColor: settings.colorButton || '#1c1917',
                           color: settings.colorButtonText || '#ffffff'
@@ -239,7 +239,7 @@ export const DiscountPopup: React.FC<DiscountPopupProps> = ({
 
                     <button
                       onClick={handleApplyAndShop}
-                      className="w-full py-3 px-6 rounded-full font-subheading font-bold text-xs uppercase tracking-wider transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-sm cursor-pointer"
+                      className="w-full py-3 px-6 rounded-full font-subheading font-bold text-xs uppercase tracking-wider transition duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-sm cursor-pointer"
                       style={{
                         backgroundColor: '#10b981',
                         color: '#ffffff'

@@ -42,7 +42,7 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({ isOpen, onClose, use
   return (
     <>
       <div className="fixed inset-0 bg-black/40 z-[100] transition-opacity animate-fade-in backdrop-blur-sm" onClick={onClose} />
-      <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-sm bg-white p-6 sm:p-8 rounded-none border border-stone-200/60 shadow-2xl z-[110] animate-scale-in">
+      <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-sm bg-white p-6 sm:p-8 rounded-none border border-stone-200/60 shadow-lg z-[110] animate-scale-in">
         <div className="flex items-center justify-between mb-6">
           <h2 className="font-serif text-xl font-medium text-stone-900 tracking-wide">
             {user ? 'My Account' : 'Sign In'}

@@ -305,7 +305,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       <div
         ref={containerRef}
         onClick={() => onNavigate(product.id)}
-        className="group relative flex flex-col p-0 bg-transparent cursor-pointer overflow-hidden transition-all duration-300 w-full shrink-0"
+        className="group relative flex flex-col p-0 bg-transparent cursor-pointer overflow-hidden transition duration-300 w-full shrink-0"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
@@ -333,7 +333,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           <div className="w-full h-full relative overflow-hidden">
             {/* Primary Image */}
             <div 
-              className="absolute inset-0 transition-all duration-700 ease-out"
+              className="absolute inset-0 transition duration-700 ease-out"
               style={{
                 opacity: isHovered ? 0 : 1,
                 transform: isHovered ? 'scale(1.1)' : 'scale(1)',
@@ -350,7 +350,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             </div>
             {/* Secondary Image */}
             <div 
-              className="absolute inset-0 transition-all duration-700 ease-out"
+              className="absolute inset-0 transition duration-700 ease-out"
               style={{
                 opacity: isHovered ? 1 : 0,
                 transform: isHovered ? 'scale(1.1)' : 'scale(1.02)',
@@ -370,7 +370,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           <div className="absolute right-4 bottom-4 flex flex-col gap-3 z-20" onClick={(e) => e.stopPropagation()}>
             
             {/* Quick view button */}
-            <div className="relative translate-x-12 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)]">
+            <div className="relative translate-x-12 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)]">
               <button
                 onClick={(e) => {
                   e.stopPropagation();
@@ -382,9 +382,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({
                 aria-label="Quick View Product"
               >
                 {/* Primary Icon - slides to the right on hover */}
-                <Eye className="w-[18px] h-[18px] transition-all duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform translate-x-0 opacity-100 group-hover/btn:translate-x-10 group-hover/btn:opacity-0" />
+                <Eye className="w-[18px] h-[18px] transition duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform translate-x-0 opacity-100 group-hover/btn:translate-x-10 group-hover/btn:opacity-0" />
                 {/* Duplicate Icon - slides in from the left on hover */}
-                <Eye className="w-[18px] h-[18px] absolute transition-all duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform -translate-x-10 opacity-0 group-hover/btn:translate-x-0 group-hover/btn:opacity-100" />
+                <Eye className="w-[18px] h-[18px] absolute transition duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform -translate-x-10 opacity-0 group-hover/btn:translate-x-0 group-hover/btn:opacity-100" />
               </button>
               
               {/* Tooltip on the left */}
@@ -395,7 +395,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
                     animate={{ opacity: 1, x: 0, scale: 1 }}
                     exit={{ opacity: 0, x: -12, scale: 0.95 }}
                     transition={{ type: "spring", stiffness: 380, damping: 26 }}
-                    className="absolute right-14 top-1/2 -translate-y-1/2 bg-black text-white text-[9px] font-mono font-bold tracking-widest uppercase px-3 py-1.5 rounded-sm shadow-xl whitespace-nowrap z-30"
+                    className="absolute right-14 top-1/2 -translate-y-1/2 bg-black text-white text-[9px] font-mono font-bold tracking-widest uppercase px-3 py-1.5 rounded-sm shadow-md whitespace-nowrap z-30"
                   >
                     QUICK VIEW
                     <div className="absolute top-1/2 -translate-y-1/2 -right-1 w-1.5 h-1.5 bg-black rotate-45" />
@@ -405,7 +405,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             </div>
 
             {/* Add to cart button */}
-            <div className="relative translate-x-12 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-[600ms] delay-75 ease-[cubic-bezier(0.16,1,0.3,1)]">
+            <div className="relative translate-x-12 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition duration-[600ms] delay-75 ease-[cubic-bezier(0.16,1,0.3,1)]">
               <button
                 onClick={(e) => {
                   e.stopPropagation();
@@ -417,9 +417,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({
                 aria-label="Add product to cart"
               >
                 {/* Primary Icon - slides to the right on hover */}
-                <ShoppingCart className="w-[18px] h-[18px] transition-all duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform translate-x-0 opacity-100 group-hover/btn:translate-x-10 group-hover/btn:opacity-0" />
+                <ShoppingCart className="w-[18px] h-[18px] transition duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform translate-x-0 opacity-100 group-hover/btn:translate-x-10 group-hover/btn:opacity-0" />
                 {/* Duplicate Icon - slides in from the left on hover */}
-                <ShoppingCart className="w-[18px] h-[18px] absolute transition-all duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform -translate-x-10 opacity-0 group-hover/btn:translate-x-0 group-hover/btn:opacity-100" />
+                <ShoppingCart className="w-[18px] h-[18px] absolute transition duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform -translate-x-10 opacity-0 group-hover/btn:translate-x-0 group-hover/btn:opacity-100" />
               </button>
 
               {/* Tooltip on the left */}
@@ -430,7 +430,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
                     animate={{ opacity: 1, x: 0, scale: 1 }}
                     exit={{ opacity: 0, x: -12, scale: 0.95 }}
                     transition={{ type: "spring", stiffness: 380, damping: 26 }}
-                    className="absolute right-14 top-1/2 -translate-y-1/2 bg-black text-white text-[9px] font-mono font-bold tracking-widest uppercase px-3 py-1.5 rounded-sm shadow-xl whitespace-nowrap z-30"
+                    className="absolute right-14 top-1/2 -translate-y-1/2 bg-black text-white text-[9px] font-mono font-bold tracking-widest uppercase px-3 py-1.5 rounded-sm shadow-md whitespace-nowrap z-30"
                   >
                     ADD TO CART
                     <div className="absolute top-1/2 -translate-y-1/2 -right-1 w-1.5 h-1.5 bg-black rotate-45" />
@@ -493,7 +493,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     <div
       ref={containerRef}
       onClick={() => onNavigate(product.id)}
-      className="group relative flex flex-col p-3 border rounded bg-white/40 cursor-pointer overflow-hidden transition-all duration-300 hover:shadow-sm"
+      className="group relative flex flex-col p-3 border rounded bg-white/40 cursor-pointer overflow-hidden transition duration-300 hover:shadow-sm"
       style={{
         borderColor: `${colorText}15`
       }}
@@ -517,7 +517,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         <div className="w-full h-full relative overflow-hidden">
           {/* Primary Image */}
           <div 
-            className="absolute inset-0 transition-all duration-700 ease-out"
+            className="absolute inset-0 transition duration-700 ease-out"
             style={{
               opacity: isHovered ? 0 : 1,
               transform: isHovered ? 'scale(1.1)' : 'scale(1)',
@@ -534,7 +534,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           </div>
           {/* Secondary Image */}
           <div 
-            className="absolute inset-0 transition-all duration-700 ease-out"
+            className="absolute inset-0 transition duration-700 ease-out"
             style={{
               opacity: isHovered ? 1 : 0,
               transform: isHovered ? 'scale(1.1)' : 'scale(1.02)',
@@ -554,7 +554,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         <div className="absolute right-4 bottom-4 flex flex-col gap-3 z-20" onClick={(e) => e.stopPropagation()}>
           
           {/* Quick view button */}
-          <div className="relative translate-x-12 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)]">
+          <div className="relative translate-x-12 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)]">
             <button
               onClick={(e) => {
                 e.stopPropagation();
@@ -566,9 +566,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               aria-label="Quick View Product"
             >
               {/* Primary Icon - slides to the right on hover */}
-              <Eye className="w-[18px] h-[18px] transition-all duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform translate-x-0 opacity-100 group-hover/btn:translate-x-10 group-hover/btn:opacity-0" />
+              <Eye className="w-[18px] h-[18px] transition duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform translate-x-0 opacity-100 group-hover/btn:translate-x-10 group-hover/btn:opacity-0" />
               {/* Duplicate Icon - slides in from the left on hover */}
-              <Eye className="w-[18px] h-[18px] absolute transition-all duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform -translate-x-10 opacity-0 group-hover/btn:translate-x-0 group-hover/btn:opacity-100" />
+              <Eye className="w-[18px] h-[18px] absolute transition duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform -translate-x-10 opacity-0 group-hover/btn:translate-x-0 group-hover/btn:opacity-100" />
             </button>
             
             {/* Tooltip on the left */}
@@ -579,7 +579,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
                   animate={{ opacity: 1, x: 0, scale: 1 }}
                   exit={{ opacity: 0, x: -12, scale: 0.95 }}
                   transition={{ type: "spring", stiffness: 380, damping: 26 }}
-                  className="absolute right-14 top-1/2 -translate-y-1/2 bg-black text-white text-[9px] font-mono font-bold tracking-widest uppercase px-3 py-1.5 rounded-sm shadow-xl whitespace-nowrap z-30"
+                  className="absolute right-14 top-1/2 -translate-y-1/2 bg-black text-white text-[9px] font-mono font-bold tracking-widest uppercase px-3 py-1.5 rounded-sm shadow-md whitespace-nowrap z-30"
                 >
                   QUICK VIEW
                   <div className="absolute top-1/2 -translate-y-1/2 -right-1 w-1.5 h-1.5 bg-black rotate-45" />
@@ -589,7 +589,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           </div>
 
           {/* Add to cart button */}
-          <div className="relative translate-x-12 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-[600ms] delay-75 ease-[cubic-bezier(0.16,1,0.3,1)]">
+          <div className="relative translate-x-12 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition duration-[600ms] delay-75 ease-[cubic-bezier(0.16,1,0.3,1)]">
             <button
               onClick={(e) => {
                 e.stopPropagation();
@@ -601,9 +601,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               aria-label="Add product to cart"
             >
               {/* Primary Icon - slides to the right on hover */}
-              <ShoppingCart className="w-[18px] h-[18px] transition-all duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform translate-x-0 opacity-100 group-hover/btn:translate-x-10 group-hover/btn:opacity-0" />
+              <ShoppingCart className="w-[18px] h-[18px] transition duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform translate-x-0 opacity-100 group-hover/btn:translate-x-10 group-hover/btn:opacity-0" />
               {/* Duplicate Icon - slides in from the left on hover */}
-              <ShoppingCart className="w-[18px] h-[18px] absolute transition-all duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform -translate-x-10 opacity-0 group-hover/btn:translate-x-0 group-hover/btn:opacity-100" />
+              <ShoppingCart className="w-[18px] h-[18px] absolute transition duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform -translate-x-10 opacity-0 group-hover/btn:translate-x-0 group-hover/btn:opacity-100" />
             </button>
 
             {/* Tooltip on the left */}
@@ -614,7 +614,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
                   animate={{ opacity: 1, x: 0, scale: 1 }}
                   exit={{ opacity: 0, x: -12, scale: 0.95 }}
                   transition={{ type: "spring", stiffness: 380, damping: 26 }}
-                  className="absolute right-14 top-1/2 -translate-y-1/2 bg-black text-white text-[9px] font-mono font-bold tracking-widest uppercase px-3 py-1.5 rounded-sm shadow-xl whitespace-nowrap z-30"
+                  className="absolute right-14 top-1/2 -translate-y-1/2 bg-black text-white text-[9px] font-mono font-bold tracking-widest uppercase px-3 py-1.5 rounded-sm shadow-md whitespace-nowrap z-30"
                 >
                   ADD TO CART
                   <div className="absolute top-1/2 -translate-y-1/2 -right-1 w-1.5 h-1.5 bg-black rotate-45" />

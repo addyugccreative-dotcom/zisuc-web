@@ -74,7 +74,7 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <>
       <header
-        className={`w-full border-b transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] sticky top-0 z-50 select-none ${
+        className={`w-full border-b transition duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] sticky top-0 z-50 select-none ${
           isNavVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'
         }`}
         style={{
@@ -107,7 +107,7 @@ export const Header: React.FC<HeaderProps> = ({
                     e.preventDefault();
                     link.action();
                   }}
-                  className={`py-1 relative transition-all duration-200 text-stone-850 hover:text-stone-950`}
+                  className={`py-1 relative transition duration-200 text-stone-850 hover:text-stone-950`}
                   style={{ fontWeight: link.isActive ? '600' : '500' }}
                 >
                   <span className={link.isActive ? 'text-stone-950 font-semibold' : 'text-stone-700 font-medium'}>
@@ -115,7 +115,7 @@ export const Header: React.FC<HeaderProps> = ({
                   </span>
                   {link.isActive && (
                     <span 
-                      className="absolute bottom-[-18px] left-0 right-0 h-[2.5px] bg-[#2D2926] transition-all duration-300" 
+                      className="absolute bottom-[-18px] left-0 right-0 h-[2.5px] bg-[#2D2926] transition duration-300" 
                       style={{ transform: 'scaleX(1)' }}
                     />
                   )}
@@ -157,7 +157,7 @@ export const Header: React.FC<HeaderProps> = ({
                     className="fixed inset-0 z-30" 
                     onClick={() => setCurrencyMenuOpen(false)}
                   />
-                  <div className="absolute right-0 mt-1.5 w-44 bg-white border border-stone-200 shadow-xl rounded-xl py-1.5 z-40 max-h-64 overflow-y-auto">
+                  <div className="absolute right-0 mt-1.5 w-44 bg-white border border-stone-200 shadow-md rounded-xl py-1.5 z-40 max-h-64 overflow-y-auto">
                     <p className="text-[10px] font-sans font-bold text-stone-400 px-3 py-1 uppercase tracking-wider border-b border-stone-100 mb-1">Select Currency</p>
                     {SUPPORTED_CURRENCIES.map((cur) => (
                       <button
@@ -224,7 +224,7 @@ export const Header: React.FC<HeaderProps> = ({
             onClick={() => setMobileMenuOpen(false)}
           />
           <div
-            className="fixed inset-y-0 left-0 w-72 max-w-full z-[110] flex flex-col p-6 shadow-2xl transition-transform duration-300 bg-white"
+            className="fixed inset-y-0 left-0 w-72 max-w-full z-[110] flex flex-col p-6 shadow-lg transition-transform duration-300 bg-white"
           >
             <div className="flex items-center justify-between pb-4 border-b border-stone-100">
               <img decoding="async" loading="lazy" src="/zisuc-logo.png" alt="ZISU'C Logo" className="h-6 w-auto object-contain" />

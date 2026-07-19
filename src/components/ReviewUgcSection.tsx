@@ -274,7 +274,7 @@ export const ReviewUgcSection: React.FC = () => {
               <div
                 key={uniqueKey}
                 onClick={() => openVideoInModal(video)}
-                className="w-[170px] sm:w-[200px] aspect-[9/16] shrink-0 rounded-2xl overflow-hidden relative shadow-sm hover:shadow-md hover:scale-102 transition-all duration-300 cursor-pointer border border-stone-200/40 bg-[#FAF6F3] group"
+                className="w-[170px] sm:w-[200px] aspect-[9/16] shrink-0 rounded-2xl overflow-hidden relative shadow-sm hover:shadow-md hover:scale-102 transition duration-300 cursor-pointer border border-stone-200/40 bg-[#FAF6F3] group"
               >
                 {/* Autoplay Muted Low-Lag Local Video */}
                 <UgcMarqueeVideo
@@ -341,7 +341,7 @@ export const ReviewUgcSection: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-150 bg-black/95 backdrop-blur-md flex items-center justify-center p-4"
+            className="fixed inset-0 z-150 bg-black/95 backdrop-blur-sm flex items-center justify-center p-4"
             onClick={closeVideoModal}
           >
             {/* Modal Container */}
@@ -350,7 +350,7 @@ export const ReviewUgcSection: React.FC = () => {
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.95, y: 15 }}
               transition={{ type: 'spring', damping: 25, stiffness: 350 }}
-              className="relative w-full max-w-sm sm:max-w-[420px] aspect-[9/16] bg-stone-950 rounded-3xl overflow-hidden shadow-2xl border border-stone-800 flex flex-col justify-between"
+              className="relative w-full max-w-sm sm:max-w-[420px] aspect-[9/16] bg-stone-950 rounded-3xl overflow-hidden shadow-lg border border-stone-800 flex flex-col justify-between"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Full height active video playing */}

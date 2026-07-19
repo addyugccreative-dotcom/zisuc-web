@@ -188,7 +188,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
 
       {/* Cart Drawer Panel Container */}
       <div
-        className={`fixed inset-y-0 right-0 w-full sm:w-96 max-w-full z-[160] flex flex-col shadow-2xl transition-transform duration-300 transform select-none ${
+        className={`fixed inset-y-0 right-0 w-full sm:w-96 max-w-full z-[160] flex flex-col shadow-lg transition-transform duration-300 transform select-none ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
         style={{
@@ -197,7 +197,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
         }}
       >
         {toastMessage && (
-          <div className="absolute top-24 left-1/2 -translate-x-1/2 w-[90%] z-50 bg-white shadow-xl border rounded-lg p-3 text-center animate-in slide-in-from-top-4 fade-in duration-300" style={{ borderColor: `${settings.colorText}1a` }}>
+          <div className="absolute top-24 left-1/2 -translate-x-1/2 w-[90%] z-50 bg-white shadow-md border rounded-lg p-3 text-center animate-in slide-in-from-top-4 fade-in duration-300" style={{ borderColor: `${settings.colorText}1a` }}>
             <span className="text-xs font-bold text-teal-700">{toastMessage}</span>
           </div>
         )}
@@ -223,7 +223,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
           </span>
           <div className="relative w-full h-1 bg-neutral-200 rounded-full mt-1 mb-1">
             <div
-              className="absolute top-0 left-0 h-full rounded-full transition-all duration-500 z-10"
+              className="absolute top-0 left-0 h-full rounded-full transition duration-500 z-10"
               style={{
                 backgroundColor: settings.colorButton,
                 width: `${progressPercent}%`,

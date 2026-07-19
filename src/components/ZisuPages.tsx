@@ -147,7 +147,7 @@ export const CertificatesPage: React.FC<ZisuPageProps> = ({ settings, onNavigate
               <img 
                 src={src} 
                 alt={`ZISU'O Certificate ${idx + 1}`} 
-                className="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
+                className="w-full h-full object-contain transition duration-500 group-hover:scale-105"
               />
               {/* Expand Hint Overlay */}
               <div className="absolute inset-0 bg-stone-900/0 group-hover:bg-stone-900/10 transition-colors duration-300 flex items-center justify-center">
@@ -175,7 +175,7 @@ export const CertificatesPage: React.FC<ZisuPageProps> = ({ settings, onNavigate
           <img 
             src={selectedImage} 
             alt="Certificate Fullscreen" 
-            className="max-w-full max-h-[90vh] object-contain shadow-2xl animate-scale-in"
+            className="max-w-full max-h-[90vh] object-contain shadow-lg animate-scale-in"
             onClick={(e) => e.stopPropagation()} // Prevent closing when clicking on the image itself
           />
         </div>

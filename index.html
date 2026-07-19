@@ -1,66 +1,15 @@
-<!doctype html>
-<html lang="en" style="text-rendering: optimizeSpeed; -webkit-font-smoothing: antialiased;">
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/zisuc-logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kira Skincare - Luxury Organic Cosmetics</title>
-
-    <!-- Establish ultra-fast third-party connection pre-handshakes -->
-    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
-    <link rel="dns-prefetch" href="https://images.unsplash.com" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <!-- Preload critical assets for sub-1-second loading -->
-    <link rel="preload" href="/360 rotate Kira 60˚ C-Tide Cream.mp4" as="video" type="video/mp4" crossorigin="anonymous" />
-    <link rel="preload" href="/360 rotate E-BAP Powder Cleanser.webm" as="video" type="video/webm" crossorigin="anonymous" />
-    <link rel="preload" href="/360 rotate Cica Pin Cell Skin Trigger (Set of 2).webm" as="video" type="video/webm" crossorigin="anonymous" />
     
-    <!-- Inline ultra-fast asset caching script -->
-    <script>
-      (function() {
-        const criticalAssets = [
-          "/360 rotate Kira 60˚ C-Tide Cream.mp4",
-          "/360 rotate E-BAP Powder Cleanser.webm",
-          "/360 rotate Cica Pin Cell Skin Trigger (Set of 2).webm",
-          "/E-BAP Powder Cleanser left side image.png",
-          "/Brightening support with vitamins section Kira 60˚ C-Tide Cream right side image.png"
-        ];
-        criticalAssets.forEach(url => {
-          if (url.endsWith('.mp4') || url.endsWith('.webm')) {
-            const req = new XMLHttpRequest();
-            req.open('GET', url, true);
-            req.responseType = 'blob';
-            req.send();
-          } else {
-            const img = new Image();
-            img.src = url;
-          }
-        });
-      })();
-    </script>
-    
-    <style>
-      /* Force browser to prioritize 120Hz smooth interactive scrolling and render layers efficiently */
-      html {
-        scroll-behavior: smooth;
-        text-size-adjust: 100%;
-      }
-      body {
-        -webkit-overflow-scrolling: touch;
-        overscroll-behavior-y: auto;
-        text-rendering: optimizeSpeed;
-      }
-      /* Fast layout paint hints for general components */
-      .gpu-accelerated {
-        transform: translate3d(0, 0, 0);
-        backface-visibility: hidden;
-        perspective: 1000px;
-        will-change: transform;
-      }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>ZISU'C Skincare | Premium Botanical Skin Nutrition</title>
   </head>
-  <body class="bg-[#FAF8F5] text-stone-900 overflow-x-hidden">
+  <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
