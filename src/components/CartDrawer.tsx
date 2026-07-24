@@ -188,6 +188,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
 
       {/* Cart Drawer Panel Container */}
       <div
+        data-lenis-prevent
         className={`fixed inset-y-0 right-0 w-full sm:w-96 max-w-full z-[160] flex flex-col shadow-lg transition-transform duration-300 transform select-none ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}

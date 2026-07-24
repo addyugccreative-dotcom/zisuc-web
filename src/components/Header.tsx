@@ -224,6 +224,7 @@ export const Header: React.FC<HeaderProps> = ({
             onClick={() => setMobileMenuOpen(false)}
           />
           <div
+            data-lenis-prevent
             className="fixed inset-y-0 left-0 w-72 max-w-full z-[110] flex flex-col p-6 shadow-lg transition-transform duration-300 bg-white"
           >
             <div className="flex items-center justify-between pb-4 border-b border-stone-100">
