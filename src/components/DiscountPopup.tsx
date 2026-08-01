@@ -110,7 +110,6 @@ export const DiscountPopup: React.FC<DiscountPopupProps> = ({
 
             <motion.div
               id="discount-popup-panel"
-              data-lenis-prevent
               initial={{ x: '100%', opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: '120%', opacity: 0 }}

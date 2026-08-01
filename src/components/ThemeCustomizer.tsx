@@ -76,7 +76,7 @@ export const ThemeCustomizer: React.FC<ThemeCustomizerProps> = ({
   };
 
   return (
-    <div data-lenis-prevent className="w-full lg:w-96 shrink-0 bg-stone-900 text-stone-100 flex flex-col h-full border-r border-stone-800 shadow-lg select-none font-sans text-xs sm:text-sm">
+    <div className="w-full lg:w-96 shrink-0 bg-stone-900 text-stone-100 flex flex-col h-full border-r border-stone-800 shadow-lg select-none font-sans text-xs sm:text-sm">
       {/* Visual Customizer Header title block */}
       <div className="p-4 sm:p-5 border-b border-stone-850 flex items-center justify-between">
         <div className="flex items-center space-x-2">

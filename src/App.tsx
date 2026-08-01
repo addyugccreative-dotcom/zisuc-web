@@ -27,7 +27,6 @@ import { Currency, SUPPORTED_CURRENCIES, convertAndFormatPrice } from './lib/cur
 import { SearchOverlay } from './components/SearchOverlay';
 import { OptimizedVideo } from './components/OptimizedVideo';
 import { SkincareChatbot } from './components/SkincareChatbot';
-import { SmoothScrollProvider } from './components/SmoothScroll';
 
 // Import high-quality generated assets
 import serumCardImage from './assets/images/serum_card_1780759261384.png';
@@ -551,8 +550,7 @@ export default function App() {
   };
 
   return (
-    <SmoothScrollProvider>
-      <div className="relative min-h-screen bg-[#FAF5F0] text-stone-900 font-sans overflow-x-clip selection:bg-[#F2A183] selection:text-white">
+    <div className="relative min-h-screen bg-[#FAF5F0] text-stone-900 font-sans overflow-x-clip selection:bg-[#F2A183] selection:text-white">
       {/* Premium custom mouse cursor outline animation */}
       <CustomCursor />
       
@@ -626,13 +624,7 @@ export default function App() {
 
           {/* Back to Top Capsule Button */}
           <button
-            onClick={() => {
-              if (window.lenis) {
-                window.lenis.scrollTo(0, { duration: 1.2 });
-              } else {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }
-            }}
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="bg-black hover:bg-stone-800 text-white flex flex-col items-center justify-center pt-1.5 pb-3 sm:pt-2 sm:pb-4.5 px-0 w-5 sm:w-7 rounded-full cursor-pointer transition duration-300 shadow-xs group border border-stone-800/10"
           >
             <ChevronUp className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white mb-1 sm:mb-1.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
@@ -1865,6 +1857,5 @@ export default function App() {
       </div>
 
     </div>
-    </SmoothScrollProvider>
   );
 }

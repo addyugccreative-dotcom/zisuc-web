@@ -79,7 +79,6 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({
 
           {/* Search container */}
           <motion.div
-            data-lenis-prevent
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -50, opacity: 0 }}
